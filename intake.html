@@ -143,24 +143,17 @@
       <b>Does your computer need unlocking?</b> Some GM modules (especially 2019+ / Gen V) need a
       one-time HP Tuners unlock service before custom tuning. Quick guide: a previous custom
       HP Tuners flash means it's already unlocked. A handheld programmer (Range, Pulsar,
-      Hypertech) does not unlock it — pick "handheld only" below. "Not sure" is a fine answer.
+      Hypertech) does not unlock it.
     </div>
+    <p style="font-weight:600;margin:14px 0 8px">If applicable, has the module been unlocked by HP Tuners unlock service?</p>
     <div class="radio-group">
       <div class="radio-item">
-        <input type="radio" name="tune_history" id="never" value="never" required>
-        <label for="never">Never tuned</label>
+        <input type="radio" name="unlock_status" id="unlock_yes" value="yes" required>
+        <label for="unlock_yes">Yes</label>
       </div>
       <div class="radio-item">
-        <input type="radio" name="tune_history" id="handheld" value="handheld">
-        <label for="handheld">Handheld only</label>
-      </div>
-      <div class="radio-item">
-        <input type="radio" name="tune_history" id="hpt" value="hpt">
-        <label for="hpt">HP Tuners flash (unlocked)</label>
-      </div>
-      <div class="radio-item">
-        <input type="radio" name="tune_history" id="notsure" value="notsure">
-        <label for="notsure">Not sure</label>
+        <input type="radio" name="unlock_status" id="unlock_no" value="no">
+        <label for="unlock_no">No</label>
       </div>
     </div>
 
@@ -240,9 +233,9 @@
         if(req.indexOf(f[1])>=0&&!v)missing.push(f[0]);
         if(v)lines.push(f[0]+": "+v);
       });
-      var th=document.querySelector('input[name="tune_history"]:checked');
+      var th=document.querySelector('input[name="unlock_status"]:checked');
       var st=document.querySelector('input[name="service_type"]:checked');
-      if(!th)missing.push("Tune history");else lines.push("Tune history: "+th.nextElementSibling.textContent);
+      if(!th)missing.push("Module unlocked (HP Tuners unlock service)");else lines.push("Module unlocked by HP Tuners unlock service: "+th.nextElementSibling.textContent);
       if(!st)missing.push("Service type");else lines.push("Service type: "+st.nextElementSibling.textContent);
       if(missing.length){alert("Please fill in: "+missing.join(", "));return;}
       var body=lines.join("\n");
