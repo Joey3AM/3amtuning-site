@@ -44,10 +44,10 @@
   /* ---------- nav ---------- */
   nav { position:sticky; top:0; z-index:50; background:rgba(12,15,10,.88); backdrop-filter:blur(10px);
         border-bottom:1px solid var(--line); }
-  .nav-in { display:flex; align-items:center; justify-content:space-between; height:60px; }
+  .nav-in { display:flex; align-items:center; justify-content:space-between; height:68px; }
   .nav-logo { display:flex; align-items:center; gap:11px; font-family:var(--display); font-weight:800; font-size:24px; letter-spacing:2px; color:var(--ink); }
   .nav-logo span { color:var(--accent); }
-  .nav-mark { height:42px; width:auto; }
+  .nav-mark { height:56px; width:auto; }
   .myatts-logo { height:86px; width:auto; display:block; margin-top:10px; }
   .nav-links { display:flex; gap:26px; font-size:13.5px; font-weight:600; letter-spacing:.4px; }
   .nav-links a { color:var(--muted); transition:color .15s; }
@@ -164,6 +164,12 @@
      then uncomment the .img-band section in the body below. */
   .img-band { border-top:1px solid var(--line); height:340px; background:url('assets/band.jpg') center/cover no-repeat; }
 
+  .social { display:flex; gap:12px; margin-top:12px; }
+  .social a { display:flex; align-items:center; justify-content:center; width:38px; height:38px;
+    border-radius:50%; border:1px solid var(--line-hi); color:var(--muted); transition:all .15s; }
+  .social a:hover { color:#0c0f0a; background:var(--accent); border-color:var(--accent); }
+  .social svg { width:17px; height:17px; fill:currentColor; }
+
   footer { border-top:1px solid var(--line); padding:44px 0 56px; color:var(--muted); font-size:13.5px; }
   .foot-in { display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; }
   .foot-logo { font-family:var(--display); font-weight:800; font-size:20px; letter-spacing:2px; color:var(--ink); }
@@ -182,7 +188,7 @@
 
 <nav>
   <div class="wrap nav-in">
-    <div class="nav-logo"><img class="nav-mark" src="assets/3am_mark.png" alt="">3<span>AM</span> TUNING</div>
+    <div class="nav-logo"><img class="nav-mark" src="assets/3am_mark.png" alt="3AM Tuning"></div>
     <div class="nav-links">
       <a href="#services">What we do</a>
       <a href="#process">How it works</a>
@@ -318,6 +324,12 @@
       <div class="foot-logo">3<span>AM</span> TUNING</div>
       <div style="font-family:var(--display);font-style:italic;font-weight:700;color:var(--accent);letter-spacing:1px;margin:2px 0 4px">"It's in the tune!"</div>
       Portal, GA &middot; Joey3AM@3amtuning.com
+      <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=61592151416687" aria-label="3AM Tuning on Facebook">
+          <svg viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+        </a>
+        <!-- Instagram / Snapchat / TikTok icons drop in here when Joey has those handles -->
+      </div>
     </div>
     <div style="text-align:right">
       GM ECU &amp; TCM calibration — HP Tuners &amp; Holley EFI<br>
