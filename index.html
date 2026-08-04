@@ -29,166 +29,197 @@
 </script>
 <style>
   :root {
-    --bg:#0c0f0a; --panel:#141910; --panel-2:#171d12; --ink:#f2f5ee; --muted:#a8b39c;
-    --accent:#a3e635; --accent-dark:#7cb518; --line:#242b1c; --line-hi:#374625;
+    --page:#020402; --page-2:#0b1109; --card:#070b06;
+    --dark:#070b06; --dark-2:#0b1109;
+    --ink:#f4f7ef; --soft:#d8dfd1; --muted:#9da894;
+    --accent:#98ed1d; --accent-bright:#b7ff32; --accent-deep:#b7ff32;
+    --line:rgba(183,255,50,.18); --line-soft:rgba(183,255,50,.10); --line-strong:rgba(183,255,50,.42);
     --display:"Barlow Condensed","Segoe UI",Arial,sans-serif;
     --body:"Inter","Segoe UI",Arial,sans-serif;
   }
   * { box-sizing:border-box; margin:0; }
   html { scroll-behavior:smooth; }
-  body { font-family:var(--body); background:var(--bg); color:var(--ink); line-height:1.65; font-size:16px; }
-  a { color:var(--accent); text-decoration:none; }
+  body { font-family:var(--body); color:var(--ink); line-height:1.65; font-size:16px; overflow-x:hidden;
+    background:radial-gradient(circle at 30% 24%, rgba(115,190,20,.12), transparent 28%), #020402; }
+  a { color:var(--accent-deep); text-decoration:none; }
   img { max-width:100%; display:block; }
   .wrap { max-width:1080px; margin:0 auto; padding:0 24px; }
-
-  /* ---------- nav ---------- */
-  nav { position:sticky; top:0; z-index:50; background:rgba(12,15,10,.88); backdrop-filter:blur(10px);
-        border-bottom:1px solid var(--line); }
-  .nav-in { display:flex; align-items:center; justify-content:space-between; height:68px; }
-  .nav-logo { display:flex; align-items:center; gap:11px; font-family:var(--display); font-weight:800; font-size:24px; letter-spacing:2px; color:var(--ink); }
-  .nav-logo span { color:var(--accent); }
-  .nav-mark { height:56px; width:auto; }
-  .myatts-logo { height:86px; width:auto; display:block; margin-top:10px; }
-  .nav-links { display:flex; gap:26px; font-size:13.5px; font-weight:600; letter-spacing:.4px; }
-  .nav-links a { color:var(--muted); transition:color .15s; }
-  .nav-links a:hover { color:var(--accent); }
-  .nav-cta { font-size:13px; font-weight:700; padding:8px 16px; border-radius:5px; background:var(--accent); color:#0c0f0a; }
-  .nav-cta:hover { background:var(--accent-dark); }
-
-  /* ---------- hero ----------
-     IMAGE SLOT: when the hero render is ready, save it as assets/hero.jpg and add
-     style="--hero-img:url('assets/hero.jpg')" to the <header> tag below.
-     Spec: 1920x1080+ dark garage/dyno scene, no text in image. */
-  header {
-    position:relative; overflow:hidden; text-align:center; padding:40px 0 84px;
-    background:
-      linear-gradient(180deg, rgba(12,15,10,.45) 0%, rgba(12,15,10,.86) 70%, var(--bg) 100%),
-      var(--hero-img, radial-gradient(1100px 520px at 50% -12%, #26361a 0%, #131a0c 45%, var(--bg) 78%));
-    background-size:cover; background-position:center;
-  }
-  header::before { /* subtle technical grid */
-    content:""; position:absolute; inset:0; pointer-events:none; opacity:.35;
-    background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
-    background-size:56px 56px;
-    mask-image:radial-gradient(720px 380px at 50% 18%, rgba(0,0,0,.8), transparent 75%);
-    -webkit-mask-image:radial-gradient(720px 380px at 50% 18%, rgba(0,0,0,.8), transparent 75%);
-  }
-  .hero-kicker { position:relative; display:inline-block; font-size:12.5px; font-weight:700; letter-spacing:3px;
-    text-transform:uppercase; color:var(--accent); border:1px solid var(--line-hi); border-radius:999px;
-    padding:7px 18px; background:rgba(20,25,16,.6); }
-  .logo { position:relative; font-family:var(--display); font-size:clamp(56px,9vw,96px); font-weight:800;
-    letter-spacing:4px; line-height:1.02; margin-top:22px; }
-  .logo span { color:var(--accent); }
-  .tagline { position:relative; color:var(--muted); margin:14px auto 0; font-size:18px; max-width:640px; }
-  .wrap-wide { position:relative; max-width:1500px; margin:0 auto; padding:0 16px; }
-  .hero-banner { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line-hi);
-    box-shadow:0 22px 60px -24px rgba(0,0,0,.9), 0 0 90px -40px rgba(163,230,53,.35); }
-  .slogan { position:relative; font-family:var(--display); font-style:italic; font-weight:700;
-    font-size:clamp(26px,4vw,38px); letter-spacing:1.5px; color:var(--accent); margin-top:34px; }
+  .wrap-wide { max-width:1200px; margin:0 auto; padding:0 24px; }
   .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
     clip:rect(0 0 0 0); white-space:nowrap; border:0; }
-  .cta-row { position:relative; margin-top:38px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-  .btn { display:inline-block; padding:14px 30px; border-radius:6px; font-weight:700; font-size:16px; transition:all .15s; }
-  .btn-primary { background:var(--accent); color:#0c0f0a; box-shadow:0 0 0 0 rgba(163,230,53,.35); }
-  .btn-primary:hover { background:var(--accent-dark); box-shadow:0 6px 24px -6px rgba(163,230,53,.45); transform:translateY(-1px); }
-  .btn-ghost { border:1.5px solid var(--line-hi); color:var(--ink); background:rgba(20,25,16,.4); }
-  .btn-ghost:hover { border-color:var(--accent); color:var(--accent); }
 
-  /* ---------- tools bar ---------- */
-  .tools-bar { border-top:1px solid var(--line); background:linear-gradient(180deg,var(--panel-2),var(--bg));
-    display:flex; align-items:center; justify-content:center; gap:20px 56px; flex-wrap:wrap; padding:26px 24px; }
-  .tools-bar .tools-label { font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--muted); }
-  .tools-bar img { height:36px; width:auto; opacity:.92; transition:opacity .15s; }
-  .tools-bar img:hover { opacity:1; }
-  .hero-tools { border-top:none; background:transparent; padding:22px 0 0; }
+  /* ---------- nav ---------- */
+  nav { position:sticky; top:0; z-index:50; background:rgba(7,10,6,.86); backdrop-filter:blur(18px);
+        border-bottom:1px solid rgba(163,230,53,.14); }
+  .nav-in { display:flex; align-items:center; justify-content:space-between; height:74px; }
+  .nav-logo { display:flex; align-items:center; flex-shrink:0; }
+  .nav-mark { height:58px; width:auto; max-width:210px; object-fit:contain; object-position:left center; }
+  .nav-links { display:flex; gap:28px; font-size:13.5px; font-weight:600; letter-spacing:.3px; }
+  .nav-links a { color:var(--muted); transition:color .2s; }
+  .nav-links a:hover { color:var(--accent-deep); }
+  .nav-cta { font-size:13.5px; font-weight:700; padding:10px 20px; border-radius:10px;
+    background:var(--accent); color:#10150c; box-shadow:0 8px 24px rgba(143,216,20,.24); transition:all .2s; }
+  .nav-cta:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(143,216,20,.32); }
+
+  /* ---------- hero: dark banner card floating on light page ---------- */
+  header { position:relative; text-align:center; padding:56px 0 84px;
+    background:radial-gradient(950px 460px at 50% 26%, rgba(143,216,20,.15), transparent 65%), var(--page); }
+  .hero-banner { width:100%; max-width:1160px; margin:0 auto; height:auto; display:block; border-radius:18px;
+    position:relative; z-index:1; border:1px solid rgba(143,216,20,.28);
+    box-shadow:0 34px 80px -30px rgba(15,25,8,.55), 0 0 90px -38px rgba(143,216,20,.5); }
+  .wrap-wide { position:relative; }
+  .smoke { position:absolute; pointer-events:none; z-index:0; opacity:.8; }
+  .smoke-l { left:-14px; bottom:-48px; width:300px; }
+  .smoke-r { right:-18px; bottom:-38px; width:320px; }
+  .smoke-b { right:-16px; bottom:-30px; width:250px; z-index:0; }
+
+  .trust { max-width:1040px; margin:-28px auto 0; position:relative; z-index:2;
+    background:rgba(16,21,13,.85); backdrop-filter:blur(14px);
+    border:1px solid rgba(163,230,53,.18); border-radius:16px;
+    box-shadow:0 20px 50px rgba(0,0,0,.42);
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:center;
+    gap:10px 26px; padding:16px 30px; }
+  .trust .tp { color:var(--soft); font-size:13.5px; font-weight:600; display:flex; align-items:center; gap:8px; white-space:nowrap; }
+  .trust .tp::before { content:"✓"; color:var(--accent-bright); font-weight:900; }
+  .trust img { height:28px; width:auto; }
+
+  .slogan { font-family:var(--display); font-style:italic; font-weight:700;
+    font-size:clamp(26px,4vw,38px); letter-spacing:1.5px; color:var(--accent-deep); margin-top:40px; }
+  .tagline { color:var(--soft); margin:12px auto 0; font-size:17.5px; max-width:640px; }
+  .cta-row { margin-top:32px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .btn { display:inline-block; padding:14px 30px; border-radius:10px; font-weight:700; font-size:16px; transition:all .2s; }
+  .btn-primary { background:var(--accent); color:#10150c; box-shadow:0 8px 24px rgba(143,216,20,.24); }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 14px 30px rgba(143,216,20,.34); }
+  .btn-ghost { background:var(--card); border:1px solid rgba(163,230,53,.28); color:var(--ink); }
+  .btn-ghost:hover { border-color:var(--accent-deep); color:var(--accent-deep); }
 
   /* ---------- sections ---------- */
-  section { padding:76px 0; border-top:1px solid var(--line); }
-  .kicker { font-size:12.5px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:8px; }
-  h2 { font-family:var(--display); font-size:clamp(30px,4vw,40px); font-weight:700; letter-spacing:1px;
-       text-transform:uppercase; margin-bottom:28px; }
-  h2 b { color:var(--accent); }
+  section { padding:78px 0; }
+  #services { padding-top:92px; }
+  #process { padding-bottom:28px; }
+  #where { padding-top:28px; }
+  .kicker { font-size:12.5px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent-deep); margin-bottom:10px; }
+  h2 { font-family:var(--display); font-size:clamp(30px,4vw,40px); font-weight:700; letter-spacing:.4px; margin-bottom:34px; }
 
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
-  .card { position:relative; background:linear-gradient(180deg,var(--panel-2),var(--panel)); border:1px solid var(--line);
-    border-radius:10px; padding:24px; transition:border-color .15s, transform .15s; }
-  .card:hover { border-color:var(--line-hi); transform:translateY(-2px); }
-  .card::before { content:""; position:absolute; top:0; left:24px; right:24px; height:2px; border-radius:2px;
-    background:linear-gradient(90deg,var(--accent),transparent 70%); opacity:0; transition:opacity .15s; }
-  .card:hover::before { opacity:1; }
-  .card .ico { width:40px; height:40px; margin-bottom:14px; color:var(--accent); }
-  .card .ico svg { width:100%; height:100%; }
-  .card h3 { font-family:var(--display); font-size:20px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
-    margin-bottom:8px; color:var(--ink); }
-  .card p { font-size:14.5px; color:var(--muted); }
+  .card-base { background:linear-gradient(145deg, rgba(12,18,10,.96), rgba(5,8,4,.98)); border:1px solid var(--line); border-radius:16px;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.025), 0 18px 45px rgba(0,0,0,.35);
+    transition:transform .2s, box-shadow .2s, border-color .2s; position:relative; }
+  .card-base:hover { transform:translateY(-3px); border-color:var(--line-strong);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.03), 0 24px 55px rgba(0,0,0,.45); }
+  .card-base::before { content:""; position:absolute; top:0; left:26px; right:26px; height:2px; border-radius:2px;
+    background:linear-gradient(90deg,var(--accent),transparent 70%); opacity:0; transition:opacity .2s; }
+  .card-base:hover::before { opacity:1; }
 
-  .steps { counter-reset:s; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
-  .step { background:linear-gradient(180deg,var(--panel-2),var(--panel)); border:1px solid var(--line);
-    border-radius:10px; padding:26px 24px; font-size:14.5px; color:var(--muted); }
-  .step b { display:block; color:var(--ink); font-size:16.5px; margin-bottom:6px; }
-  .step::before { counter-increment:s; content:"0" counter(s); display:block; font-family:var(--display);
-    font-size:34px; font-weight:800; color:var(--accent); line-height:1; margin-bottom:14px; }
+  .svc-primary { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .svc { padding:30px 30px 26px; }
+  .svc .ico { width:44px; height:44px; margin-bottom:14px; color:var(--accent-deep); }
+  .svc .ico svg { width:100%; height:100%; }
+  .svc h3 { font-family:var(--display); font-size:23px; font-weight:700; letter-spacing:.4px; margin-bottom:8px; }
+  .svc p { font-size:15px; color:var(--soft); }
+  .svc-wide { grid-column:1 / -1; display:flex; gap:24px; align-items:flex-start; padding:28px 30px; }
+  .svc-wide .ico { flex-shrink:0; margin-bottom:0; }
+  .svc-rail { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px; }
+  .rail-card { padding:18px 20px; }
+  .rail-card .rc-head { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+  .rail-card .rc-head svg { width:24px; height:24px; color:var(--accent-deep); flex-shrink:0; }
+  .rail-card h3 { font-family:var(--display); font-size:17.5px; font-weight:700; letter-spacing:.3px; }
+  .rail-card p { font-size:13.5px; color:var(--soft); }
 
-  .price-panel { margin-top:36px; background:linear-gradient(135deg,#1a2410 0%,var(--panel) 55%);
-    border:1px solid var(--line-hi); border-radius:12px; padding:34px 36px; position:relative; overflow:hidden; }
-  .price-panel::after { content:""; position:absolute; inset:0; pointer-events:none;
-    background:radial-gradient(480px 200px at 85% 0%, rgba(163,230,53,.10), transparent 70%); }
-  .price-kicker { font-size:12.5px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); font-weight:700; }
-  .price-big { font-family:var(--display); font-size:clamp(34px,5vw,48px); font-weight:800; letter-spacing:1px;
-    margin:10px 0 12px; line-height:1.1; }
-  .price-big b { color:var(--accent); }
-  .price-panel p { color:var(--muted); font-size:15px; max-width:640px; }
-  .note { color:var(--muted); font-size:14px; margin-top:14px; }
+  /* ---------- timeline + pricing ---------- */
+  .pp { display:grid; grid-template-columns:1.1fr .85fr 1.05fr; gap:24px; align-items:start; position:relative; }
+  .cov-col h3 { font-family:var(--display); font-size:26px; font-weight:700; letter-spacing:.4px; margin:0 0 14px; color:var(--ink); }
+  .cov-col ul.plain { grid-template-columns:1fr; gap:10px; }
+  .cov-col ul.plain li { padding:12px 14px 12px 40px; font-size:13.5px; }
+  .cov-col ul.plain li::before { left:14px; top:11px; }
+  @media (max-width:1100px) { .pp { grid-template-columns:1fr; } }
+  .timeline { padding:6px 0 0 8px; }
+  .t-item { position:relative; padding:0 0 30px 66px; }
+  .t-item:not(:last-child)::after { content:""; position:absolute; left:22px; top:44px; bottom:6px;
+    width:2px; background:linear-gradient(180deg, rgba(143,216,20,.45), rgba(38,55,29,.10)); border-radius:2px; }
+  .t-num { position:absolute; left:0; top:0; font-family:var(--display); font-size:26px; font-weight:800;
+    color:var(--accent-deep); background:var(--card); border:1px solid var(--line); border-radius:12px;
+    width:46px; height:46px; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 20px rgba(20,30,10,.08); }
+  .t-item b { display:block; font-size:16.5px; margin-bottom:4px; }
+  .t-item .t-body { font-size:14.5px; color:var(--soft); }
 
-  ul.plain { list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(420px,1fr)); gap:10px 28px; }
-  ul.plain li { padding:14px 16px 14px 44px; position:relative; background:var(--panel); border:1px solid var(--line);
-    border-radius:8px; font-size:15px; }
-  ul.plain li::before { content:"✓"; position:absolute; left:16px; top:13px; color:var(--accent); font-weight:900; }
+  .price-card { background:#070b06; border:1px solid var(--line-strong); border-radius:16px; overflow:hidden;
+    position:relative; z-index:1; align-self:start; box-shadow:0 0 28px rgba(137,225,25,.10), 0 24px 50px rgba(0,0,0,.45); }
+  .price-head { background:transparent; color:var(--accent-bright); font-family:var(--display); font-weight:700;
+    font-size:18px; letter-spacing:2.5px; text-transform:uppercase; text-align:center; padding:16px 20px 6px; }
+  .price-body { display:flex; align-items:center; justify-content:center; gap:26px; padding:28px 26px 6px; }
+  .price-body .pn { text-align:center; }
+  .price-body .pv { display:block; font-family:var(--display); font-weight:800; font-size:46px; line-height:1; color:var(--accent-deep); }
+  .price-body .pl { display:block; color:var(--ink); font-size:14px; margin-top:6px; }
+  .price-body .pdiv { width:46px; height:46px; }
+  .price-note { color:var(--muted); font-size:13.5px; text-align:center; padding:12px 28px 26px; margin:0; }
+  .note { color:var(--muted); font-size:14px; margin-top:18px; }
+
+  /* ---------- coverage ---------- */
+  ul.plain { list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(420px,1fr)); gap:12px 24px; padding:0; }
+  ul.plain li { padding:16px 18px 16px 46px; position:relative; background:var(--card); border:1px solid var(--line-soft);
+    border-radius:16px; font-size:15px; color:var(--soft); box-shadow:0 8px 22px rgba(0,0,0,.35); }
+  ul.plain li::before { content:"✓"; position:absolute; left:18px; top:15px; color:var(--accent-deep); font-weight:900; }
   ul.plain li b { color:var(--ink); }
-  ul.plain li, ul.plain li * { color:var(--muted); }
-  ul.plain li b { color:var(--ink); }
+  .myatts-chip { display:inline-block; background:var(--dark); border-radius:12px; padding:10px 16px; margin-top:10px; }
+  .myatts-logo { height:64px; width:auto; display:block; }
 
-  .faq details { background:linear-gradient(180deg,var(--panel-2),var(--panel)); border:1px solid var(--line);
-    border-radius:10px; margin-bottom:12px; overflow:hidden; }
-  .faq details[open] { border-color:var(--line-hi); }
-  .faq summary { cursor:pointer; list-style:none; padding:20px 24px; font-family:var(--display); font-size:19px;
-    font-weight:700; letter-spacing:.5px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  /* ---------- faq ---------- */
+  .faq details { background:var(--card); border:1px solid var(--line-soft); border-radius:16px;
+    margin-bottom:12px; overflow:hidden; box-shadow:0 8px 22px rgba(20,30,10,.05); }
+  .faq details[open] { border-color:var(--line); }
+  .faq summary { cursor:pointer; list-style:none; padding:20px 26px; font-family:var(--display); font-size:19.5px;
+    font-weight:700; letter-spacing:.3px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
   .faq summary::-webkit-details-marker { display:none; }
-  .faq summary::after { content:"+"; font-family:var(--body); color:var(--accent); font-size:22px; font-weight:400; flex-shrink:0; }
+  .faq summary::after { content:"+"; font-family:var(--body); color:var(--accent-deep); font-size:22px; font-weight:400; flex-shrink:0; }
   .faq details[open] summary::after { content:"–"; }
-  .faq details p { padding:0 24px 22px; color:var(--muted); font-size:15px; }
+  .faq details p { padding:0 26px 22px; color:var(--muted); font-size:15px; }
 
-  /* IMAGE SLOT (optional band between sections): drop a wide shop/dyno shot at assets/band.jpg,
-     then uncomment the .img-band section in the body below. */
-  .img-band { border-top:1px solid var(--line); height:340px; background:url('assets/band.jpg') center/cover no-repeat; }
+  /* ---------- partner bar ---------- */
+  .partner-bar { border-top:1px solid var(--line-soft); padding:24px 0;
+    background:linear-gradient(145deg, rgba(12,18,10,.96), rgba(5,8,4,.98)); }
+  .partner-in { display:flex; align-items:center; justify-content:center; gap:16px 30px; flex-wrap:wrap; }
+  .partner-label { font-size:12.5px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); font-weight:700; }
+  .partner-bar img { height:56px; width:auto; }
+  .partner-note { font-size:13.5px; color:var(--soft); }
 
+  /* ---------- footer (dark anchor) ---------- */
+  footer { background:var(--dark); color:var(--muted); padding:48px 0 56px; font-size:13.5px; margin-top:30px;
+    border-top:1px solid var(--line-soft); }
+  .foot-in { display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+  .foot-mark { height:52px; width:auto; margin-bottom:8px; }
+  .foot-slogan { font-family:var(--display); font-style:italic; font-weight:700; color:var(--accent-bright);
+    letter-spacing:1px; margin:2px 0 6px; }
   .social { display:flex; gap:12px; margin-top:12px; }
   .social a { display:flex; align-items:center; justify-content:center; width:38px; height:38px;
-    border-radius:50%; border:1px solid var(--line-hi); color:var(--muted); transition:all .15s; }
-  .social a:hover { color:#0c0f0a; background:var(--accent); border-color:var(--accent); }
+    border-radius:50%; border:1px solid rgba(163,230,53,.28); color:#ccd7ba; transition:all .2s; }
+  .social a:hover { color:#10150c; background:var(--accent-bright); border-color:var(--accent-bright); }
   .social svg { width:17px; height:17px; fill:currentColor; }
 
-  footer { border-top:1px solid var(--line); padding:44px 0 56px; color:var(--muted); font-size:13.5px; }
-  .foot-in { display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; }
-  .foot-logo { font-family:var(--display); font-weight:800; font-size:20px; letter-spacing:2px; color:var(--ink); }
-  .foot-logo span { color:var(--accent); }
-
+  @media (max-width:860px) {
+    .svc-primary { grid-template-columns:1fr; }
+    .svc-rail { grid-template-columns:1fr; }
+    .pp { grid-template-columns:1fr; }
+    ul.plain { grid-template-columns:1fr; }
+  }
   @media (max-width:760px) {
     .nav-links { display:none; }
-    header { padding:20px 0 56px; }
+    .nav-in { height:64px; }
+    .nav-mark { height:44px; }
+    header { padding:28px 0 64px; }
     section { padding:56px 0; }
-    ul.plain { grid-template-columns:1fr; }
-    .price-panel { padding:26px 22px; }
+    .trust { margin-top:-20px; padding:14px 18px; }
+    .svc-wide { flex-direction:column; gap:12px; }
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <div class="wrap nav-in">
-    <div class="nav-logo"><img class="nav-mark" src="assets/3am_mark.png" alt="3AM Tuning"></div>
+<nav id="top">
+  <div class="wrap-wide nav-in">
+    <a class="nav-logo" href="#top" aria-label="3AM Tuning home">
+      <img class="nav-mark" src="assets/3am_nav_logo_light.png" alt="3AM Tuning">
+    </a>
     <div class="nav-links">
       <a href="#services">What we do</a>
       <a href="#process">How it works</a>
@@ -202,12 +233,17 @@
 <header>
   <h1 class="sr-only">3AM Tuning — It's in the tune!</h1>
   <div class="wrap-wide">
+    <img class="smoke smoke-l" src="assets/glow_l.png" alt="">
+    <img class="smoke smoke-r" src="assets/glow_r2.png" alt="">
     <img class="hero-banner" src="assets/hero_banner.jpg"
          alt="3AM Tuning — blacked-out GM truck, Corvette, and Camaro under green light. HP Tuners, Holley calibration, diagnostics, transmission tuning, E85 &amp; flex fuel, GM LS/LT. Monday–Saturday by appointment. Remote or drop-off. Coastal Georgia.">
-    <div class="tools-bar hero-tools" aria-label="Calibration platforms">
-      <span class="tools-label">Calibrated with</span>
+    <div class="trust" aria-label="Calibration platforms and trust points">
+      <span class="tp">GM-focused calibration</span>
       <img src="assets/hptuners.png" alt="HP Tuners">
       <img src="assets/holley.png" alt="Holley EFI">
+      <span class="tp">Remote nationwide</span>
+      <span class="tp">Coastal Georgia drop-off</span>
+      <span class="tp">Revision support included</span>
     </div>
   </div>
   <div class="wrap">
@@ -223,26 +259,39 @@
 <section id="services">
   <div class="wrap">
     <div class="kicker">Services</div>
-    <h2>What we <b>do</b></h2>
-    <div class="cards">
-      <div class="card">
+    <h2>What we do</h2>
+    <div class="svc-primary">
+      <div class="card-base svc">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 6V3M12 6V3M15 6V3M9 21v-3M12 21v-3M15 21v-3M6 9H3M6 12H3M6 15H3M21 9h-3M21 12h-3M21 15h-3"/></svg></div>
-        <h3>ECU Calibration</h3><p>Remote or drop-off. Your truck, your tables, your logs — with revision support until it's right. Most first revisions back within a business day.</p></div>
-      <div class="card">
+        <h3>ECU Calibration</h3>
+        <p>Remote or drop-off. Your truck, your tables, your logs — with revision support until it's right. Most first revisions back within a business day.</p>
+      </div>
+      <div class="card-base svc">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="7" r="2.2"/><circle cx="17" cy="7" r="2.2"/><circle cx="7" cy="17" r="2.2"/><circle cx="17" cy="17" r="2.2"/><path d="M7 9.2v5.6M17 9.2v5.6M9.2 7h5.6"/></svg></div>
-        <h3>Transmission Calibration</h3><p>8L90E/10L90E shift tuning that's tuned, not just flashed — half the fix lives in the engine computer's torque model. 6-speeds included with any ECU cal.</p></div>
-      <div class="card">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5s5.5 6 5.5 10a5.5 5.5 0 0 1-11 0c0-4 5.5-10 5.5-10Z"/><path d="M9.5 13.5a2.5 2.5 0 0 0 2.5 2.5"/></svg></div>
-        <h3>E85 / Flex Fuel</h3><p>Measured ethanol content and dyno-method spark — not "add 5 degrees everywhere." The knock sensor won't save a lean E85 motor, so we don't tune like it will.</p></div>
-      <div class="card">
+        <h3>Transmission Calibration</h3>
+        <p>8L90E/10L90E shift tuning that's tuned, not just flashed — half the fix lives in the engine computer's torque model. 6-speeds included with any ECU cal.</p>
+      </div>
+      <div class="card-base svc svc-wide">
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
-        <h3>Diagnostics &amp; Drivability</h3><p>Surging, shift complaints, DTC chase-downs, "tuned but feels wrong." We tell you honestly what's mechanical and what's calibration.</p></div>
-      <div class="card">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5h8M12 5v3M6 8h12l1.5 3H4.5L6 8ZM4 11h16v7a1 1 0 0 1-1 1h-2v-2H7v2H5a1 1 0 0 1-1-1v-7Z"/></svg></div>
-        <h3>Gen III / IV / V GM Specialty</h3><p>LS and LT trucks, Camaro, Corvette. Naturally aspirated, cammed, boosted — quoted straight for your exact combo.</p></div>
-      <div class="card">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/></svg></div>
-        <h3>Holley EFI</h3><p>Setup and tuning for Holley-managed builds, standalone or swap.</p></div>
+        <div>
+          <h3>Diagnostics &amp; Drivability</h3>
+          <p>Surging, shift complaints, DTC chase-downs, "tuned but feels wrong." We tell you honestly what's mechanical and what's calibration.</p>
+        </div>
+      </div>
+    </div>
+    <div class="svc-rail">
+      <div class="card-base rail-card">
+        <div class="rc-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5s5.5 6 5.5 10a5.5 5.5 0 0 1-11 0c0-4 5.5-10 5.5-10Z"/><path d="M9.5 13.5a2.5 2.5 0 0 0 2.5 2.5"/></svg><h3>E85 / Flex Fuel</h3></div>
+        <p>Measured ethanol content and dyno-method spark — not "add 5 degrees everywhere." The knock sensor won't save a lean E85 motor, so we don't tune like it will.</p>
+      </div>
+      <div class="card-base rail-card">
+        <div class="rc-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5h8M12 5v3M6 8h12l1.5 3H4.5L6 8ZM4 11h16v7a1 1 0 0 1-1 1h-2v-2H7v2H5a1 1 0 0 1-1-1v-7Z"/></svg><h3>Gen III / IV / V GM Specialty</h3></div>
+        <p>LS and LT trucks, Camaro, Corvette. Naturally aspirated, cammed, boosted — quoted straight for your exact combo.</p>
+      </div>
+      <div class="card-base rail-card">
+        <div class="rc-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/></svg><h3>Holley EFI</h3></div>
+        <p>Setup and tuning for Holley-managed builds, standalone or swap.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -250,44 +299,55 @@
 <section id="process">
   <div class="wrap">
     <div class="kicker">Process</div>
-    <h2>How it <b>works</b></h2>
-    <div class="steps">
-      <div class="step"><b>Message with your combo.</b>Year, engine, mods, fuel (93, E85) — and whether you need HP Tuners module unlock service when applicable (expl. Gen V).</div>
-      <div class="step"><b>Get a real number.</b>A straight answer and a firm quote, usually same day. No mystery packages.</div>
-      <div class="step"><b>Tune day.</b>Drop-off near Portal / Statesboro, or remote with your HP Tuners interface. Revision support (within reason).</div>
-    </div>
-    <div class="price-panel">
-      <div class="price-kicker">Base calibration starts at</div>
-      <div class="price-big"><b>$550</b> in person &nbsp;/&nbsp; <b>$450</b> remote</div>
-      <p>Revision support included. Exact pricing is based on the vehicle and combination.
-      Transmission, E85, power-adder, and newer GM platform work are quoted individually.</p>
+    <h2>How it works</h2>
+    <div class="pp">
+      <div class="timeline">
+        <div class="t-item">
+          <span class="t-num">01</span>
+          <b>Message with your combo.</b>
+          <div class="t-body">Year, engine, mods, fuel (93, E85) — and whether you need HP Tuners module unlock service when applicable (expl. Gen V).</div>
+        </div>
+        <div class="t-item">
+          <span class="t-num">02</span>
+          <b>Get a real number.</b>
+          <div class="t-body">A straight answer and a firm quote, usually same day. No mystery packages.</div>
+        </div>
+        <div class="t-item">
+          <span class="t-num">03</span>
+          <b>Tune day.</b>
+          <div class="t-body">Drop-off near Portal / Statesboro, or remote with your HP Tuners interface. Revision support (within reason).</div>
+        </div>
+      </div>
+      <div class="price-card">
+        <div class="price-head">Base calibration starts at</div>
+        <div class="price-body">
+          <div class="pn"><span class="pv">$550</span><span class="pl">in person</span></div>
+          <img class="pdiv" src="assets/favicon.png" alt="">
+          <div class="pn"><span class="pv">$450</span><span class="pl">remote</span></div>
+        </div>
+        <p class="price-note">Revision support included. Exact pricing is based on the vehicle and combination.
+        Transmission, E85, power-adder, and newer GM platform work are quoted individually.</p>
+      </div>
+      <div class="cov-col" id="where">
+        <div class="kicker">Coverage</div>
+        <h3>Where we work</h3>
+        <ul class="plain">
+          <li><b>Drop-off:</b> Portal / Statesboro, GA — serving Southeast Georgia and the Lowcountry</li>
+          <li><b>Remote:</b> nationwide, on your HP Tuners interface and account</li>
+          <li><b>Dyno sessions:</b> available through local partner shop <a href="https://www.facebook.com/MyattsGarage">Myatt's Garage</a></li>
+          <li><b>Hours:</b> Monday–Saturday by appointment — flexible morning and evening slots</li>
+        </ul>
+      </div>
+      <img class="smoke smoke-b" src="assets/glow_l.png" alt="">
     </div>
     <p class="note">Quotes are based on complete information received.</p>
-  </div>
-</section>
-
-<!-- IMAGE SLOT: uncomment when assets/band.jpg exists (wide dyno/shop shot, no text)
-<div class="img-band"></div>
--->
-
-<section id="where">
-  <div class="wrap">
-    <div class="kicker">Coverage</div>
-    <h2>Where we <b>work</b></h2>
-    <ul class="plain">
-      <li><b>Drop-off:</b> Portal / Statesboro, GA — serving Southeast Georgia and the Lowcountry</li>
-      <li><b>Remote:</b> nationwide, on your HP Tuners interface and account</li>
-      <li><b>Dyno sessions:</b> available through local partner shop
-        <a href="https://www.facebook.com/MyattsGarage"><img class="myatts-logo" src="assets/myatts_garage.png" alt="Myatt's Garage"></a></li>
-      <li><b>Hours:</b> Monday–Saturday by appointment — flexible morning and evening slots</li>
-    </ul>
   </div>
 </section>
 
 <section id="faq">
   <div class="wrap">
     <div class="kicker">Straight answers</div>
-    <h2>Common <b>questions</b></h2>
+    <h2>Common questions</h2>
     <div class="faq">
       <details open>
         <summary>If my vehicle has been previously tuned, why does that matter?</summary>
@@ -308,8 +368,8 @@
 <section id="quote">
   <div class="wrap">
     <div class="kicker">Contact</div>
-    <h2>Get a <b>quote</b></h2>
-    <p style="max-width:680px">Message the page with your year/make/model, engine, mod list, fuel, and whether you need HP Tuners module unlock service — or fill out the intake form and it lands in our inbox organized and ready to quote.</p>
+    <h2>Get a quote</h2>
+    <p style="max-width:680px;color:var(--soft)">Message the page with your year/make/model, engine, mod list, fuel, and whether you need HP Tuners module unlock service — or fill out the intake form and it lands in our inbox organized and ready to quote.</p>
     <div class="cta-row" style="justify-content:flex-start">
       <a class="btn btn-primary" href="https://www.facebook.com/profile.php?id=61592151416687">Facebook Messenger</a>
       <a class="btn btn-ghost" href="intake.html">Intake form</a>
@@ -318,11 +378,19 @@
   </div>
 </section>
 
+<div class="partner-bar">
+  <div class="wrap partner-in">
+    <span class="partner-label">Proudly partnered with</span>
+    <a href="https://www.facebook.com/MyattsGarage"><img src="assets/myatts_garage.png" alt="Myatt's Garage"></a>
+    <span class="partner-note">LS &amp; late-model GM specialists — in-house dyno · <a href="https://www.facebook.com/MyattsGarage">Visit on Facebook</a></span>
+  </div>
+</div>
+
 <footer>
   <div class="wrap foot-in">
     <div>
-      <div class="foot-logo">3<span>AM</span> TUNING</div>
-      <div style="font-family:var(--display);font-style:italic;font-weight:700;color:var(--accent);letter-spacing:1px;margin:2px 0 4px">"It's in the tune!"</div>
+      <img class="foot-mark" src="assets/3am_mark.png" alt="3AM Tuning">
+      <div class="foot-slogan">"It's in the tune!"</div>
       Portal, GA &middot; Joey3AM@3amtuning.com
       <div class="social">
         <a href="https://www.facebook.com/profile.php?id=61592151416687" aria-label="3AM Tuning on Facebook">
