@@ -8,6 +8,11 @@
 <meta property="og:title" content="3AM Tuning — GM Calibration, Coastal Georgia">
 <meta property="og:description" content="Real custom tuning for GM trucks &amp; LS/LT performance — not a mail-order file. Remote anywhere, drop-off in Southeast GA.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://joey3am.github.io/3amtuning-site/assets/hero_banner.jpg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -23,54 +28,185 @@
 }
 </script>
 <style>
-  :root { --bg:#0c0f0a; --panel:#141910; --ink:#f2f5ee; --muted:#a8b39c; --accent:#a3e635; --accent-dark:#7cb518; --line:#242b1c; }
+  :root {
+    --bg:#0c0f0a; --panel:#141910; --panel-2:#171d12; --ink:#f2f5ee; --muted:#a8b39c;
+    --accent:#a3e635; --accent-dark:#7cb518; --line:#242b1c; --line-hi:#374625;
+    --display:"Barlow Condensed","Segoe UI",Arial,sans-serif;
+    --body:"Inter","Segoe UI",Arial,sans-serif;
+  }
   * { box-sizing:border-box; margin:0; }
-  body { font-family:"Segoe UI",Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; font-size:16px; }
+  html { scroll-behavior:smooth; }
+  body { font-family:var(--body); background:var(--bg); color:var(--ink); line-height:1.65; font-size:16px; }
   a { color:var(--accent); text-decoration:none; }
-  .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
-  header { padding:64px 0 48px; text-align:center; background:radial-gradient(ellipse at top, #1a2410 0%, var(--bg) 70%); }
-  .logo { font-size:42px; font-weight:900; letter-spacing:3px; }
+  img { max-width:100%; display:block; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 24px; }
+
+  /* ---------- nav ---------- */
+  nav { position:sticky; top:0; z-index:50; background:rgba(12,15,10,.88); backdrop-filter:blur(10px);
+        border-bottom:1px solid var(--line); }
+  .nav-in { display:flex; align-items:center; justify-content:space-between; height:60px; }
+  .nav-logo { display:flex; align-items:center; gap:11px; font-family:var(--display); font-weight:800; font-size:24px; letter-spacing:2px; color:var(--ink); }
+  .nav-logo span { color:var(--accent); }
+  .nav-mark { height:42px; width:auto; }
+  .myatts-logo { height:86px; width:auto; display:block; margin-top:10px; }
+  .nav-links { display:flex; gap:26px; font-size:13.5px; font-weight:600; letter-spacing:.4px; }
+  .nav-links a { color:var(--muted); transition:color .15s; }
+  .nav-links a:hover { color:var(--accent); }
+  .nav-cta { font-size:13px; font-weight:700; padding:8px 16px; border-radius:5px; background:var(--accent); color:#0c0f0a; }
+  .nav-cta:hover { background:var(--accent-dark); }
+
+  /* ---------- hero ----------
+     IMAGE SLOT: when the hero render is ready, save it as assets/hero.jpg and add
+     style="--hero-img:url('assets/hero.jpg')" to the <header> tag below.
+     Spec: 1920x1080+ dark garage/dyno scene, no text in image. */
+  header {
+    position:relative; overflow:hidden; text-align:center; padding:40px 0 84px;
+    background:
+      linear-gradient(180deg, rgba(12,15,10,.45) 0%, rgba(12,15,10,.86) 70%, var(--bg) 100%),
+      var(--hero-img, radial-gradient(1100px 520px at 50% -12%, #26361a 0%, #131a0c 45%, var(--bg) 78%));
+    background-size:cover; background-position:center;
+  }
+  header::before { /* subtle technical grid */
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.35;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(720px 380px at 50% 18%, rgba(0,0,0,.8), transparent 75%);
+    -webkit-mask-image:radial-gradient(720px 380px at 50% 18%, rgba(0,0,0,.8), transparent 75%);
+  }
+  .hero-kicker { position:relative; display:inline-block; font-size:12.5px; font-weight:700; letter-spacing:3px;
+    text-transform:uppercase; color:var(--accent); border:1px solid var(--line-hi); border-radius:999px;
+    padding:7px 18px; background:rgba(20,25,16,.6); }
+  .logo { position:relative; font-family:var(--display); font-size:clamp(56px,9vw,96px); font-weight:800;
+    letter-spacing:4px; line-height:1.02; margin-top:22px; }
   .logo span { color:var(--accent); }
-  .tagline { color:var(--muted); margin-top:8px; font-size:17px; }
-  .strip { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 18px; margin-top:20px; font-size:13px; letter-spacing:1px; text-transform:uppercase; color:var(--accent); }
-  .strip span { white-space:nowrap; }
-  .cta-row { margin-top:32px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
-  .btn { display:inline-block; padding:13px 28px; border-radius:6px; font-weight:700; font-size:16px; }
-  .btn-primary { background:var(--accent); color:#111; }
-  .btn-primary:hover { background:var(--accent-dark); }
-  .btn-ghost { border:1.5px solid var(--accent); color:var(--accent); }
-  section { padding:44px 0; border-top:1px solid var(--line); }
-  h2 { font-size:24px; margin-bottom:18px; }
+  .tagline { position:relative; color:var(--muted); margin:14px auto 0; font-size:18px; max-width:640px; }
+  .wrap-wide { position:relative; max-width:1500px; margin:0 auto; padding:0 16px; }
+  .hero-banner { width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line-hi);
+    box-shadow:0 22px 60px -24px rgba(0,0,0,.9), 0 0 90px -40px rgba(163,230,53,.35); }
+  .slogan { position:relative; font-family:var(--display); font-style:italic; font-weight:700;
+    font-size:clamp(26px,4vw,38px); letter-spacing:1.5px; color:var(--accent); margin-top:34px; }
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+    clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+  .cta-row { position:relative; margin-top:38px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .btn { display:inline-block; padding:14px 30px; border-radius:6px; font-weight:700; font-size:16px; transition:all .15s; }
+  .btn-primary { background:var(--accent); color:#0c0f0a; box-shadow:0 0 0 0 rgba(163,230,53,.35); }
+  .btn-primary:hover { background:var(--accent-dark); box-shadow:0 6px 24px -6px rgba(163,230,53,.45); transform:translateY(-1px); }
+  .btn-ghost { border:1.5px solid var(--line-hi); color:var(--ink); background:rgba(20,25,16,.4); }
+  .btn-ghost:hover { border-color:var(--accent); color:var(--accent); }
+
+  /* ---------- tools bar ---------- */
+  .tools-bar { border-top:1px solid var(--line); background:linear-gradient(180deg,var(--panel-2),var(--bg));
+    display:flex; align-items:center; justify-content:center; gap:20px 56px; flex-wrap:wrap; padding:26px 24px; }
+  .tools-bar .tools-label { font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--muted); }
+  .tools-bar img { height:36px; width:auto; opacity:.92; transition:opacity .15s; }
+  .tools-bar img:hover { opacity:1; }
+  .hero-tools { border-top:none; background:transparent; padding:22px 0 0; }
+
+  /* ---------- sections ---------- */
+  section { padding:76px 0; border-top:1px solid var(--line); }
+  .kicker { font-size:12.5px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:8px; }
+  h2 { font-family:var(--display); font-size:clamp(30px,4vw,40px); font-weight:700; letter-spacing:1px;
+       text-transform:uppercase; margin-bottom:28px; }
   h2 b { color:var(--accent); }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
-  .card { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:18px 20px; }
-  .card h3 { font-size:16px; margin-bottom:6px; color:var(--accent); }
-  .card p { font-size:14px; color:var(--muted); }
-  .steps { counter-reset:s; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; }
-  .step { background:var(--panel); border:1px solid var(--line); border-radius:8px; padding:18px 20px; }
-  .step::before { counter-increment:s; content:counter(s); display:inline-block; background:var(--accent); color:#111; font-weight:900; width:28px; height:28px; border-radius:50%; text-align:center; line-height:28px; margin-bottom:10px; }
-  .price-line { background:var(--panel); border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:0 8px 8px 0; padding:16px 20px; margin-top:10px; }
-  .price-line b { color:var(--accent); }
-  .price-kicker { font-size:13px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); }
-  .price-big { font-size:26px; font-weight:900; margin:4px 0 8px; }
-  .note { color:var(--muted); font-size:14px; margin-top:10px; }
-  ul.plain { list-style:none; }
-  ul.plain li { padding:6px 0 6px 26px; position:relative; }
-  ul.plain li::before { content:"✓"; position:absolute; left:0; color:var(--accent); font-weight:900; }
-  footer { border-top:1px solid var(--line); padding:32px 0 44px; text-align:center; color:var(--muted); font-size:13px; }
-  @media (max-width:600px) { .logo { font-size:30px; } header { padding:44px 0 36px; } }
+
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+  .card { position:relative; background:linear-gradient(180deg,var(--panel-2),var(--panel)); border:1px solid var(--line);
+    border-radius:10px; padding:24px; transition:border-color .15s, transform .15s; }
+  .card:hover { border-color:var(--line-hi); transform:translateY(-2px); }
+  .card::before { content:""; position:absolute; top:0; left:24px; right:24px; height:2px; border-radius:2px;
+    background:linear-gradient(90deg,var(--accent),transparent 70%); opacity:0; transition:opacity .15s; }
+  .card:hover::before { opacity:1; }
+  .card .ico { width:40px; height:40px; margin-bottom:14px; color:var(--accent); }
+  .card .ico svg { width:100%; height:100%; }
+  .card h3 { font-family:var(--display); font-size:20px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+    margin-bottom:8px; color:var(--ink); }
+  .card p { font-size:14.5px; color:var(--muted); }
+
+  .steps { counter-reset:s; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+  .step { background:linear-gradient(180deg,var(--panel-2),var(--panel)); border:1px solid var(--line);
+    border-radius:10px; padding:26px 24px; font-size:14.5px; color:var(--muted); }
+  .step b { display:block; color:var(--ink); font-size:16.5px; margin-bottom:6px; }
+  .step::before { counter-increment:s; content:"0" counter(s); display:block; font-family:var(--display);
+    font-size:34px; font-weight:800; color:var(--accent); line-height:1; margin-bottom:14px; }
+
+  .price-panel { margin-top:36px; background:linear-gradient(135deg,#1a2410 0%,var(--panel) 55%);
+    border:1px solid var(--line-hi); border-radius:12px; padding:34px 36px; position:relative; overflow:hidden; }
+  .price-panel::after { content:""; position:absolute; inset:0; pointer-events:none;
+    background:radial-gradient(480px 200px at 85% 0%, rgba(163,230,53,.10), transparent 70%); }
+  .price-kicker { font-size:12.5px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); font-weight:700; }
+  .price-big { font-family:var(--display); font-size:clamp(34px,5vw,48px); font-weight:800; letter-spacing:1px;
+    margin:10px 0 12px; line-height:1.1; }
+  .price-big b { color:var(--accent); }
+  .price-panel p { color:var(--muted); font-size:15px; max-width:640px; }
+  .note { color:var(--muted); font-size:14px; margin-top:14px; }
+
+  ul.plain { list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(420px,1fr)); gap:10px 28px; }
+  ul.plain li { padding:14px 16px 14px 44px; position:relative; background:var(--panel); border:1px solid var(--line);
+    border-radius:8px; font-size:15px; }
+  ul.plain li::before { content:"✓"; position:absolute; left:16px; top:13px; color:var(--accent); font-weight:900; }
+  ul.plain li b { color:var(--ink); }
+  ul.plain li, ul.plain li * { color:var(--muted); }
+  ul.plain li b { color:var(--ink); }
+
+  .faq details { background:linear-gradient(180deg,var(--panel-2),var(--panel)); border:1px solid var(--line);
+    border-radius:10px; margin-bottom:12px; overflow:hidden; }
+  .faq details[open] { border-color:var(--line-hi); }
+  .faq summary { cursor:pointer; list-style:none; padding:20px 24px; font-family:var(--display); font-size:19px;
+    font-weight:700; letter-spacing:.5px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:"+"; font-family:var(--body); color:var(--accent); font-size:22px; font-weight:400; flex-shrink:0; }
+  .faq details[open] summary::after { content:"–"; }
+  .faq details p { padding:0 24px 22px; color:var(--muted); font-size:15px; }
+
+  /* IMAGE SLOT (optional band between sections): drop a wide shop/dyno shot at assets/band.jpg,
+     then uncomment the .img-band section in the body below. */
+  .img-band { border-top:1px solid var(--line); height:340px; background:url('assets/band.jpg') center/cover no-repeat; }
+
+  footer { border-top:1px solid var(--line); padding:44px 0 56px; color:var(--muted); font-size:13.5px; }
+  .foot-in { display:flex; justify-content:space-between; align-items:center; gap:18px; flex-wrap:wrap; }
+  .foot-logo { font-family:var(--display); font-weight:800; font-size:20px; letter-spacing:2px; color:var(--ink); }
+  .foot-logo span { color:var(--accent); }
+
+  @media (max-width:760px) {
+    .nav-links { display:none; }
+    header { padding:20px 0 56px; }
+    section { padding:56px 0; }
+    ul.plain { grid-template-columns:1fr; }
+    .price-panel { padding:26px 22px; }
+  }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <div class="logo">3<span>AM</span> TUNING</div>
-    <div class="tagline">Custom GM ECU &amp; transmission calibration — dialed in with real logging, not mail-order guesses.</div>
-    <div class="strip">
-      <span>HP Tuners</span><span>/</span><span>Holley EFI</span><span>/</span><span>Diagnostics</span><span>/</span>
-      <span>Transmission Tuning</span><span>/</span><span>E85 &amp; Flex Fuel</span><span>/</span><span>GM LS &amp; LT</span>
+<nav>
+  <div class="wrap nav-in">
+    <div class="nav-logo"><img class="nav-mark" src="assets/3am_mark.png" alt="">3<span>AM</span> TUNING</div>
+    <div class="nav-links">
+      <a href="#services">What we do</a>
+      <a href="#process">How it works</a>
+      <a href="#where">Where we work</a>
+      <a href="#faq">Common questions</a>
     </div>
+    <a class="nav-cta" href="#quote">Get a quote</a>
+  </div>
+</nav>
+
+<header>
+  <h1 class="sr-only">3AM Tuning — It's in the tune!</h1>
+  <div class="wrap-wide">
+    <img class="hero-banner" src="assets/hero_banner.jpg"
+         alt="3AM Tuning — blacked-out GM truck, Corvette, and Camaro under green light. HP Tuners, Holley calibration, diagnostics, transmission tuning, E85 &amp; flex fuel, GM LS/LT. Monday–Saturday by appointment. Remote or drop-off. Coastal Georgia.">
+    <div class="tools-bar hero-tools" aria-label="Calibration platforms">
+      <span class="tools-label">Calibrated with</span>
+      <img src="assets/hptuners.png" alt="HP Tuners">
+      <img src="assets/holley.png" alt="Holley EFI">
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="slogan">"It's in the tune!"</div>
+    <div class="tagline">Custom GM ECU &amp; transmission calibration — dialed in with real logging, not mail-order guesses.</div>
     <div class="cta-row">
       <a class="btn btn-primary" href="https://www.facebook.com/profile.php?id=61592151416687">Message us on Facebook</a>
       <a class="btn btn-ghost" href="intake.html">Start an intake form</a>
@@ -78,63 +214,96 @@
   </div>
 </header>
 
-<section>
+<section id="services">
   <div class="wrap">
+    <div class="kicker">Services</div>
     <h2>What we <b>do</b></h2>
     <div class="cards">
-      <div class="card"><h3>ECU Calibration</h3><p>Remote or drop-off. Your truck, your tables, your logs — with revision support until it's right. Most first revisions back within a business day.</p></div>
-      <div class="card"><h3>Transmission Calibration</h3><p>8L90E/10L90E shift tuning that's tuned, not just flashed — half the fix lives in the engine computer's torque model. 6-speeds included with any ECU cal.</p></div>
-      <div class="card"><h3>E85 / Flex Fuel</h3><p>Measured ethanol content and dyno-method spark — not "add 5 degrees everywhere." The knock sensor won't save a lean E85 motor, so we don't tune like it will.</p></div>
-      <div class="card"><h3>Diagnostics &amp; Drivability</h3><p>Surging, shift complaints, DTC chase-downs, "tuned but feels wrong." We tell you honestly what's mechanical and what's calibration.</p></div>
-      <div class="card"><h3>Gen III / IV / V GM Specialty</h3><p>LS and LT trucks, Camaro, Corvette. Naturally aspirated, cammed, boosted — quoted straight for your exact combo.</p></div>
-      <div class="card"><h3>Holley EFI</h3><p>Setup and tuning for Holley-managed builds, standalone or swap.</p></div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9.5" y="9.5" width="5" height="5" rx="1"/><path d="M9 6V3M12 6V3M15 6V3M9 21v-3M12 21v-3M15 21v-3M6 9H3M6 12H3M6 15H3M21 9h-3M21 12h-3M21 15h-3"/></svg></div>
+        <h3>ECU Calibration</h3><p>Remote or drop-off. Your truck, your tables, your logs — with revision support until it's right. Most first revisions back within a business day.</p></div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="7" r="2.2"/><circle cx="17" cy="7" r="2.2"/><circle cx="7" cy="17" r="2.2"/><circle cx="17" cy="17" r="2.2"/><path d="M7 9.2v5.6M17 9.2v5.6M9.2 7h5.6"/></svg></div>
+        <h3>Transmission Calibration</h3><p>8L90E/10L90E shift tuning that's tuned, not just flashed — half the fix lives in the engine computer's torque model. 6-speeds included with any ECU cal.</p></div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5s5.5 6 5.5 10a5.5 5.5 0 0 1-11 0c0-4 5.5-10 5.5-10Z"/><path d="M9.5 13.5a2.5 2.5 0 0 0 2.5 2.5"/></svg></div>
+        <h3>E85 / Flex Fuel</h3><p>Measured ethanol content and dyno-method spark — not "add 5 degrees everywhere." The knock sensor won't save a lean E85 motor, so we don't tune like it will.</p></div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
+        <h3>Diagnostics &amp; Drivability</h3><p>Surging, shift complaints, DTC chase-downs, "tuned but feels wrong." We tell you honestly what's mechanical and what's calibration.</p></div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5h8M12 5v3M6 8h12l1.5 3H4.5L6 8ZM4 11h16v7a1 1 0 0 1-1 1h-2v-2H7v2H5a1 1 0 0 1-1-1v-7Z"/></svg></div>
+        <h3>Gen III / IV / V GM Specialty</h3><p>LS and LT trucks, Camaro, Corvette. Naturally aspirated, cammed, boosted — quoted straight for your exact combo.</p></div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="2"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3"/></svg></div>
+        <h3>Holley EFI</h3><p>Setup and tuning for Holley-managed builds, standalone or swap.</p></div>
     </div>
   </div>
 </section>
 
-<section>
+<section id="process">
   <div class="wrap">
+    <div class="kicker">Process</div>
     <h2>How it <b>works</b></h2>
     <div class="steps">
-      <div class="step"><b>Message with your combo.</b><br>Year, engine, mods, fuel (93, E85) — and whether you need HP Tuners module unlock service when applicable (expl. Gen V).</div>
-      <div class="step"><b>Get a real number.</b><br>A straight answer and a firm quote, usually same day. No mystery packages.</div>
-      <div class="step"><b>Tune day.</b><br>Drop-off near Portal / Statesboro, or remote with your HP Tuners interface. Revision support (within reason).</div>
+      <div class="step"><b>Message with your combo.</b>Year, engine, mods, fuel (93, E85) — and whether you need HP Tuners module unlock service when applicable (expl. Gen V).</div>
+      <div class="step"><b>Get a real number.</b>A straight answer and a firm quote, usually same day. No mystery packages.</div>
+      <div class="step"><b>Tune day.</b>Drop-off near Portal / Statesboro, or remote with your HP Tuners interface. Revision support (within reason).</div>
     </div>
-    <div class="price-line">
+    <div class="price-panel">
       <div class="price-kicker">Base calibration starts at</div>
-      <div class="price-big"><b>$550 in person</b> / <b>$450 remote</b></div>
-      Revision support included. Exact pricing is based on the vehicle and combination.
-      Transmission, E85, power-adder, and newer GM platform work are quoted individually.
+      <div class="price-big"><b>$550</b> in person &nbsp;/&nbsp; <b>$450</b> remote</div>
+      <p>Revision support included. Exact pricing is based on the vehicle and combination.
+      Transmission, E85, power-adder, and newer GM platform work are quoted individually.</p>
     </div>
     <p class="note">Quotes are based on complete information received.</p>
   </div>
 </section>
 
-<section>
+<!-- IMAGE SLOT: uncomment when assets/band.jpg exists (wide dyno/shop shot, no text)
+<div class="img-band"></div>
+-->
+
+<section id="where">
   <div class="wrap">
+    <div class="kicker">Coverage</div>
     <h2>Where we <b>work</b></h2>
     <ul class="plain">
       <li><b>Drop-off:</b> Portal / Statesboro, GA — serving Southeast Georgia and the Lowcountry</li>
       <li><b>Remote:</b> nationwide, on your HP Tuners interface and account</li>
-      <li><b>Dyno sessions:</b> available through local partner shop <a href="https://www.facebook.com/MyattsGarage" style="color:var(--accent);text-decoration:none">Myatt's Garage</a></li>
+      <li><b>Dyno sessions:</b> available through local partner shop
+        <a href="https://www.facebook.com/MyattsGarage"><img class="myatts-logo" src="assets/myatts_garage.png" alt="Myatt's Garage"></a></li>
       <li><b>Hours:</b> Monday–Saturday by appointment — flexible morning and evening slots</li>
     </ul>
   </div>
 </section>
 
-<section>
+<section id="faq">
   <div class="wrap">
+    <div class="kicker">Straight answers</div>
     <h2>Common <b>questions</b></h2>
-    <div class="card"><h3>If my vehicle has been previously tuned, why does that matter?</h3><p>It determines whether your engine controller needs an HP Tuners unlock service before calibration can begin. A vehicle that's only had a handheld programmer (Range, Hypertech, Pulsar) is typically not unlocked and may require that service. A vehicle that's been tuned with HP Tuners custom software is usually already unlocked — which saves time and cost. We're not judging the previous work — we just need to know what we're working with to quote you accurately.</p></div>
-    <div class="card"><h3>What's the difference between a canned tune and a real calibration?</h3><p>A canned tune is a generic file written for a vehicle like yours — not yours specifically. A real calibration logs your actual vehicle, adjusts the tables for your exact combination, and includes revision support until it's right.</p></div>
-    <div class="card"><h3>How long does it take?</h3><p>Most first revisions are back within one business day of receiving your stock file. In-person drop-off sessions are typically 4-5 hours. Remote work depends on how quickly logs are returned.</p></div>
+    <div class="faq">
+      <details open>
+        <summary>If my vehicle has been previously tuned, why does that matter?</summary>
+        <p>It determines whether your engine controller needs an HP Tuners unlock service before calibration can begin. A vehicle that's only had a handheld programmer (Range, Hypertech, Pulsar) is typically not unlocked and may require that service. A vehicle that's been tuned with HP Tuners custom software is usually already unlocked — which saves time and cost. We're not judging the previous work — we just need to know what we're working with to quote you accurately.</p>
+      </details>
+      <details>
+        <summary>What's the difference between a canned tune(CopyPasted) and a real calibration?</summary>
+        <p>A canned tune is a generic file written for a vehicle like yours — not yours specifically. A real calibration logs your actual vehicle, adjusts the tables for your exact combination, and includes revision support until it's right.</p>
+      </details>
+      <details>
+        <summary>How long does it take?</summary>
+        <p>Most first revisions are back within one business day of receiving your stock file. In-person drop-off sessions are typically 4-5 hours. Remote work depends on how quickly logs are returned.</p>
+      </details>
+    </div>
   </div>
 </section>
 
-<section>
+<section id="quote">
   <div class="wrap">
+    <div class="kicker">Contact</div>
     <h2>Get a <b>quote</b></h2>
-    <p>Message the page with your year/make/model, engine, mod list, fuel, and whether you need HP Tuners module unlock service — or fill out the intake form and it lands in our inbox organized and ready to quote.</p>
+    <p style="max-width:680px">Message the page with your year/make/model, engine, mod list, fuel, and whether you need HP Tuners module unlock service — or fill out the intake form and it lands in our inbox organized and ready to quote.</p>
     <div class="cta-row" style="justify-content:flex-start">
       <a class="btn btn-primary" href="https://www.facebook.com/profile.php?id=61592151416687">Facebook Messenger</a>
       <a class="btn btn-ghost" href="intake.html">Intake form</a>
@@ -144,9 +313,16 @@
 </section>
 
 <footer>
-  <div class="wrap">
-    3AM Tuning &middot; Portal, GA &middot; Joey3AM@3amtuning.com<br>
-    GM ECU &amp; TCM calibration — HP Tuners &amp; Holley EFI — Gen III/IV/V LS &amp; LT
+  <div class="wrap foot-in">
+    <div>
+      <div class="foot-logo">3<span>AM</span> TUNING</div>
+      <div style="font-family:var(--display);font-style:italic;font-weight:700;color:var(--accent);letter-spacing:1px;margin:2px 0 4px">"It's in the tune!"</div>
+      Portal, GA &middot; Joey3AM@3amtuning.com
+    </div>
+    <div style="text-align:right">
+      GM ECU &amp; TCM calibration — HP Tuners &amp; Holley EFI<br>
+      Gen III/IV/V LS &amp; LT
+    </div>
   </div>
 </footer>
 
