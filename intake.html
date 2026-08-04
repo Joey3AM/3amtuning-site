@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3AM Tuning — Customer Intake Form</title>
+<style>
+  :root { --ink:#111; --muted:#555; --line:#ddd; --accent:#5a8f1e; --bg:#f7f7f8; }
+  * { box-sizing:border-box; }
+  body { font-family:"Segoe UI",Arial,sans-serif; color:var(--ink); margin:0; padding:24px; font-size:14px; line-height:1.55; background:var(--bg); }
+  .sheet { max-width:720px; margin:0 auto; background:#fff; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,.08); overflow:hidden; }
+  header { background:var(--accent); color:#fff; padding:20px 28px; }
+  h1 { margin:0; font-size:22px; letter-spacing:1px; }
+  .tag { font-size:12px; opacity:.9; margin-top:4px; }
+  .body { padding:24px 28px; }
+  h2 { font-size:15px; margin:24px 0 8px; color:var(--accent); border-bottom:1px solid var(--line); padding-bottom:4px; }
+  h2:first-child { margin-top:0; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:12px 20px; }
+  .full { grid-column:1/-1; }
+  label { display:block; font-size:12px; font-weight:600; color:var(--muted); margin-bottom:3px; text-transform:uppercase; letter-spacing:.5px; }
+  input, select, textarea { width:100%; padding:8px 10px; border:1px solid var(--line); border-radius:4px; font-size:14px; font-family:inherit; }
+  input:focus, select:focus, textarea:focus { border-color:var(--accent); outline:none; box-shadow:0 0 0 2px rgba(90,143,30,.15); }
+  textarea { resize:vertical; min-height:60px; }
+  .radio-group { display:flex; gap:16px; flex-wrap:wrap; }
+  .radio-item { display:flex; align-items:center; gap:6px; }
+  .radio-item input { width:auto; }
+  .radio-item label { margin:0; text-transform:none; font-weight:400; color:var(--ink); font-size:14px; }
+  .callout { background:#f7f7f8; border-left:4px solid var(--accent); padding:12px 16px; border-radius:0 6px 6px 0; margin:12px 0; font-size:13px; }
+  .price-table { width:100%; border-collapse:collapse; margin:8px 0; font-size:13px; }
+  .price-table th, .price-table td { text-align:left; padding:6px 10px; border-bottom:1px solid var(--line); }
+  .price-table th { background:var(--bg); font-size:11px; text-transform:uppercase; color:var(--muted); }
+  .price-table td:last-child { text-align:right; white-space:nowrap; }
+  .deposit { border:1.5px solid var(--accent); padding:10px 14px; border-radius:6px; margin:12px 0; font-size:13px; }
+  .deposit b { color:var(--accent); }
+  .submit { background:var(--accent); color:#fff; border:none; padding:12px 32px; font-size:16px; font-weight:700; border-radius:6px; cursor:pointer; margin-top:16px; width:100%; }
+  .submit:hover { background:#4a7818; }
+  .note { font-size:12px; color:var(--muted); margin-top:4px; }
+  .checklist { list-style:none; padding:0; margin:8px 0; }
+  .checklist li { padding:4px 0 4px 24px; position:relative; font-size:13px; }
+  .checklist li::before { content:"☐"; position:absolute; left:0; font-size:16px; }
+  footer { margin-top:24px; padding-top:16px; border-top:1px solid var(--line); font-size:12px; color:var(--muted); text-align:center; }
+  @media (max-width:600px) { .grid { grid-template-columns:1fr; } }
+  @media print { body { background:#fff; padding:0; } .sheet { box-shadow:none; } .submit { display:none; } }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <h1>3AM TUNING</h1>
+    <div class="tag">Customer Intake &amp; Booking Form &middot; Statesboro / Portal, GA &middot; Remote tuning nationwide</div>
+  </header>
+
+  <div class="body">
+
+    <h2>Your Information</h2>
+    <div class="grid">
+      <div class="full">
+        <label>Full Name *</label>
+        <input type="text" name="name" required placeholder="John Smith">
+      </div>
+      <div>
+        <label>Phone *</label>
+        <input type="tel" name="phone" required placeholder="(912) 555-1234">
+      </div>
+      <div>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="john@email.com">
+      </div>
+      <div>
+        <label>City / Area</label>
+        <input type="text" name="location" placeholder="Savannah, GA">
+      </div>
+      <div>
+        <label>Preferred Contact</label>
+        <select name="contact_pref">
+          <option value="text">Text message</option>
+          <option value="call">Phone call</option>
+          <option value="fb">Facebook Messenger</option>
+          <option value="email">Email</option>
+        </select>
+      </div>
+    </div>
+
+    <h2>Vehicle</h2>
+    <div class="grid">
+      <div>
+        <label>Year *</label>
+        <input type="text" name="year" required placeholder="2015">
+      </div>
+      <div>
+        <label>Make / Model *</label>
+        <input type="text" name="model" required placeholder="Chevrolet Silverado 1500">
+      </div>
+      <div>
+        <label>Engine *</label>
+        <input type="text" name="engine" required placeholder="5.3L L83 V8">
+      </div>
+      <div>
+        <label>Transmission</label>
+        <select name="trans">
+          <option value="">Select if known</option>
+          <option>6L80E (6-speed auto)</option>
+          <option>6L90E (6-speed auto, HD)</option>
+          <option>8L90E (8-speed auto)</option>
+          <option>10L90E (10-speed auto)</option>
+          <option>Tremec TR6060 (6-speed manual)</option>
+          <option>Other / not sure</option>
+        </select>
+      </div>
+    </div>
+
+    <h2>Modifications</h2>
+    <div class="full">
+      <label>What's been done to the vehicle? (cam, headers, intake, exhaust, converter, gears, etc.) *</label>
+      <textarea name="mods" required rows="3" placeholder="BTR Stage 2 cam, long tube headers, cold air intake, 3.5&quot; exhaust, 4.10 gears..."></textarea>
+    </div>
+    <div class="grid">
+      <div>
+        <label>Power Adder?</label>
+        <select name="power_adder">
+          <option value="none">Naturally aspirated</option>
+          <option>Supercharger</option>
+          <option>Turbo</option>
+          <option>Nitrous</option>
+        </select>
+      </div>
+      <div>
+        <label>Fuel Type</label>
+        <select name="fuel">
+          <option>Pump gas (93)</option>
+          <option>E85 / flex fuel</option>
+          <option>E85 + flex fuel sensor</option>
+          <option>Mixed / not sure</option>
+        </select>
+      </div>
+    </div>
+
+    <h2>Module / Unlock Status</h2>
+    <div class="callout">
+      <b>Does your computer need unlocking?</b> Some GM modules (especially 2019+ / Gen V) need a
+      one-time HP Tuners unlock service before custom tuning. Quick guide: a previous custom
+      HP Tuners flash means it's already unlocked. A handheld programmer (Range, Pulsar,
+      Hypertech) does not unlock it — pick "handheld only" below. "Not sure" is a fine answer.
+    </div>
+    <div class="radio-group">
+      <div class="radio-item">
+        <input type="radio" name="tune_history" id="never" value="never" required>
+        <label for="never">Never tuned</label>
+      </div>
+      <div class="radio-item">
+        <input type="radio" name="tune_history" id="handheld" value="handheld">
+        <label for="handheld">Handheld only</label>
+      </div>
+      <div class="radio-item">
+        <input type="radio" name="tune_history" id="hpt" value="hpt">
+        <label for="hpt">HP Tuners flash (unlocked)</label>
+      </div>
+      <div class="radio-item">
+        <input type="radio" name="tune_history" id="notsure" value="notsure">
+        <label for="notsure">Not sure</label>
+      </div>
+    </div>
+
+    <h2>What Do You Need?</h2>
+    <div class="radio-group">
+      <div class="radio-item">
+        <input type="radio" name="service_type" id="dropoff" value="dropoff" required>
+        <label for="dropoff">Drop-off (Portal, GA)</label>
+      </div>
+      <div class="radio-item">
+        <input type="radio" name="service_type" id="remote" value="remote">
+        <label for="remote">Remote tuning</label>
+      </div>
+      <div class="radio-item">
+        <input type="radio" name="service_type" id="mobile" value="mobile">
+        <label for="mobile">Mobile (comes to me)</label>
+      </div>
+    </div>
+
+    <div class="full" style="margin-top:12px">
+      <label>Primary complaint or goal — what do you want fixed or improved? *</label>
+      <textarea name="complaint" required rows="3" placeholder="Surging at idle, sloppy 1-2 shift, wants more power on E85, previous tune left it feeling soft..."></textarea>
+    </div>
+
+    <div class="full">
+      <label>Any current or pending check engine codes?</label>
+      <input type="text" name="dtcs" placeholder="P0300 misfire, P0171 lean, or &quot;none that I know of&quot;">
+    </div>
+
+    <h2>Pricing Overview</h2>
+    <div class="callout">
+      <b>Base calibration:</b> $550 in-person drop-off &middot; $450 remote &middot; 2019+ / newer platforms: message for a quote<br>
+      <b>Adders:</b> 8L90E/10L90E trans +$150 &middot; 6-speed included &middot; E85/flex +$50 &middot; power adder +$100 &middot; dyno +$200<br>
+      <b>Deposit:</b> $250 to hold a mobile date. Remote: paid in full before files delivered.
+    </div>
+    <p class="note">Prices reflect current rates as of July 2026 and are subject to change. Newer GM platforms (Global A/B) require unlock fees quoted separately at HP Tuners cost. Most first revisions back within 1 business day. <b>Message for a firm quote on your specific vehicle.</b></p>
+
+    <h2>Vehicle Readiness Checklist</h2>
+    <p class="note">Please verify before your appointment — unready vehicles may incur a reschedule fee.</p>
+    <ul class="checklist">
+      <li>No active check engine codes (or you've told me what they are)</li>
+      <li>Battery healthy and charging system good (13.8V+ running)</li>
+      <li>Fuel system functional (no fuel pressure issues, working injectors)</li>
+      <li>No major vacuum or exhaust leaks</li>
+      <li>Cooling system working (no overheating issues)</li>
+      <li>All modifications fully installed and wired (no half-finished installs)</li>
+      <li>If remote: you have an HP Tuners MPVI interface (MPVI2/3/4) and a Windows laptop</li>
+    </ul>
+
+    <h2>Preferred Dates</h2>
+    <div class="grid">
+      <div>
+        <label>First choice</label>
+        <input type="text" name="date1" placeholder="Mon Aug 12, afternoon">
+      </div>
+      <div>
+        <label>Second choice</label>
+        <input type="text" name="date2" placeholder="Wed Aug 14, evening">
+      </div>
+    </div>
+
+    <div class="full" style="margin-top:12px">
+      <label>Anything else I should know?</label>
+      <textarea name="notes" rows="2" placeholder="Previous tuner experience, specific concerns, timeline pressure, etc."></textarea>
+    </div>
+
+    <button class="submit" type="button" onclick="sendIntake()">SEND MY INFO</button>
+    <p class="note" style="text-align:center">Sending opens your email app with everything filled in, and copies a summary you can paste into Facebook Messenger instead. <b>This form is a quote request only</b> &mdash; it does not create a service agreement. The service agreement and liability waiver are provided and signed separately before any work begins.</p>
+    <script>
+    function sendIntake(){
+      var fields=[["Name","name"],["Phone","phone"],["Email","email"],["City","location"],["Preferred contact","contact_pref"],["Year","year"],["Make/Model","model"],["Engine","engine"],["Transmission","trans"],["Mods","mods"],["Power adder","power_adder"],["Fuel","fuel"],["Complaint/goal","complaint"],["Codes","dtcs"],["Date choice 1","date1"],["Date choice 2","date2"],["Notes","notes"]];
+      var req=["name","phone","year","model","engine","mods","complaint"];
+      var lines=[],missing=[];
+      fields.forEach(function(f){
+        var el=document.getElementsByName(f[1])[0];
+        var v=el?el.value.trim():"";
+        if(req.indexOf(f[1])>=0&&!v)missing.push(f[0]);
+        if(v)lines.push(f[0]+": "+v);
+      });
+      var th=document.querySelector('input[name="tune_history"]:checked');
+      var st=document.querySelector('input[name="service_type"]:checked');
+      if(!th)missing.push("Tune history");else lines.push("Tune history: "+th.nextElementSibling.textContent);
+      if(!st)missing.push("Service type");else lines.push("Service type: "+st.nextElementSibling.textContent);
+      if(missing.length){alert("Please fill in: "+missing.join(", "));return;}
+      var body=lines.join("\n");
+      if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(body).catch(function(){});
+      location.href="mailto:Joey3AM@3amtuning.com?subject="+encodeURIComponent("Tune intake - "+document.getElementsByName("year")[0].value+" "+document.getElementsByName("model")[0].value)+"&body="+encodeURIComponent(body);
+    }
+    </script>
+
+    <footer>
+      3AM Tuning &middot; Joey Hiller &middot; Portal, GA &middot; Joey3AM@3amtuning.com<br>
+      GM ECU &amp; TCM calibration — HP Tuners &amp; Holley EFI — Gen III/IV/V LS &amp; LT
+    </footer>
+
+  </div>
+</div>
+</body>
+</html>
