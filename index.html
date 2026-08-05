@@ -92,6 +92,14 @@
   header::after { width:32%; height:62%; left:-11%; bottom:0;
     background-image:url("assets/smoke_process_left_v10.webp"); background-position:left bottom; opacity:.17; }
   header > .wrap-wide, header > .wrap { position:relative; z-index:2; }
+  .binary-watermark { position:absolute; pointer-events:none; z-index:1; width:auto; height:auto;
+    user-select:none; }
+  .binary-watermark-fixed { position:fixed; z-index:2; width:min(78vw,980px); height:auto; left:50%; top:50%;
+    transform:translate(-50%,-50%); opacity:.052; pointer-events:none; user-select:none;
+    -webkit-mask-image:radial-gradient(ellipse at center,#000 48%,rgba(0,0,0,.72) 72%,transparent 100%);
+    mask-image:radial-gradient(ellipse at center,#000 48%,rgba(0,0,0,.72) 72%,transparent 100%); }
+  .binary-watermark-hero { width:min(54vw,680px); left:50%; bottom:-64px; transform:translateX(-50%); opacity:.075; }
+  .binary-watermark-quote { width:min(44vw,560px); right:5%; top:18%; opacity:.065; }
   .hero-banner { width:100%; max-width:1160px; margin:0 auto; height:auto; display:block; border-radius:18px;
     position:relative; z-index:1; border:1px solid rgba(143,216,20,.28);
     box-shadow:0 34px 80px -30px rgba(15,25,8,.55), 0 0 90px -38px rgba(143,216,20,.5); }
@@ -280,6 +288,9 @@
     section { padding:56px 0; }
     .trust { margin-top:-20px; padding:14px 18px; }
     .svc-wide { flex-direction:column; gap:12px; }
+    .binary-watermark-hero { width:84vw; bottom:-24px; opacity:.055; }
+    .binary-watermark-quote { width:76vw; right:-8%; top:24%; opacity:.05; }
+    .binary-watermark-fixed { width:112vw; opacity:.038; }
   }
   @media (max-width:520px) {
     .trust-points { gap:9px 18px; }
@@ -293,6 +304,7 @@
 </style>
 </head>
 <body>
+<img class="binary-watermark-fixed" src="assets/3am_binary_watermark.webp" alt="" aria-hidden="true">
 
 <nav id="top">
   <div class="wrap-wide nav-in">
@@ -342,6 +354,7 @@
       <a class="btn btn-ghost" href="intake.html">Start an intake form</a>
     </div>
   </div>
+  <img class="binary-watermark binary-watermark-hero" src="assets/3am_binary_watermark.webp" alt="" aria-hidden="true">
 </header>
 
 <section id="services">
@@ -454,6 +467,7 @@
 </section>
 
 <section id="quote">
+  <img class="binary-watermark binary-watermark-quote" src="assets/3am_binary_watermark.webp" alt="" aria-hidden="true">
   <div class="wrap">
     <div class="kicker">Contact</div>
     <h2>Get a quote</h2>
