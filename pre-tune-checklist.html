@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pre-Tune Checklist — 3AM Tuning</title>
+<meta name="description" content="What to check on your vehicle before tune day — ignition, fuel system, air path, engine health, battery, and what to have ready for mobile, drop-off, or remote tuning.">
+<link rel="canonical" href="https://3amtuning.com/pre-tune-checklist.html">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page:#020402; --card:#070b06; --ink:#f4f7ef; --soft:#d8dfd1; --muted:#9da894;
+    --accent:#98ed1d; --accent-bright:#b7ff32;
+    --line:rgba(183,255,50,.18);
+    --display:"Barlow Condensed","Segoe UI",Arial,sans-serif;
+    --body:"Inter","Segoe UI",Arial,sans-serif;
+  }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:var(--body); color:var(--ink); line-height:1.7; font-size:16px; background:var(--page); }
+  a { color:var(--accent-bright); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  nav { position:sticky; top:0; z-index:50; background:rgba(7,10,6,.95); border-bottom:1px solid var(--line); }
+  .nav-in { max-width:1080px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .nav-mark { height:44px; width:auto; }
+  .nav-back { font-size:13.5px; font-weight:600; color:var(--muted); }
+  .nav-back:hover { color:var(--accent-bright); text-decoration:none; }
+  main { max-width:760px; margin:0 auto; padding:48px 24px 72px; }
+  h1 { font-family:var(--display); font-size:40px; letter-spacing:1px; color:var(--accent-bright); margin-bottom:4px; }
+  .updated { color:var(--muted); font-size:13px; margin-bottom:32px; }
+  h2 { font-family:var(--display); font-size:23px; letter-spacing:.6px; margin:34px 0 10px; color:var(--ink); }
+  p, li { color:var(--soft); margin-bottom:10px; }
+  ul { padding-left:22px; margin-bottom:12px; list-style:none; }
+  ul li::before { content:"☐"; color:var(--accent-bright); margin-right:10px; margin-left:-22px; }
+  ul.plain { list-style:disc; }
+  ul.plain li::before { content:none; margin:0; }
+  .callout { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 20px; margin:22px 0; color:var(--soft); }
+  .callout b { color:var(--accent-bright); }
+  footer { border-top:1px solid var(--line); padding:28px 24px 40px; text-align:center; color:var(--muted); font-size:13px; }
+  .legal-links { margin-bottom:10px; }
+  .legal-links a { color:var(--muted); margin:0 10px; }
+  .legal-links a:hover { color:var(--accent-bright); }
+  @media print {
+    body { background:#fff; color:#000; }
+    nav, footer, .callout { display:none; }
+    h1, h2 { color:#000; }
+    p, li { color:#000; }
+    ul li::before { color:#000; }
+  }
+</style>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="/"><img class="nav-mark" src="/assets/3am_nav_logo_light.png" alt="3AM Tuning"></a>
+  <a class="nav-back" href="/">&larr; Back to site</a>
+</div></nav>
+<main>
+  <h1>PRE-TUNE CHECKLIST</h1>
+  <div class="updated">Run through this before tune day — mobile, drop-off, or remote. Printable.</div>
+
+  <div class="callout"><b>Why this matters:</b> calibration is not a repair. A tune can't fix a
+  mechanical problem — it can only hide it or make it worse. Every box you check here is time on
+  tune day spent tuning instead of diagnosing.</div>
+
+  <h2>Ignition</h2>
+  <ul>
+    <li>Spark plugs are the right heat range and gap for the combination (boosted and nitrous
+    combos usually need a colder plug, gapped down).</li>
+    <li>Plugs, coils, and wires are in known-good condition — no random misfires.</li>
+  </ul>
+
+  <h2>Fuel system</h2>
+  <ul>
+    <li>Fuel filter is fresh (if the vehicle has a serviceable one).</li>
+    <li>Fuel pump can support the power goal — a stock pump doesn't feed a big cam and boost.</li>
+    <li>Injector part number / flow data is known and disclosed if not stock.</li>
+    <li>E85 / flex-fuel: working ethanol content sensor installed and lines are ethanol-rated.</li>
+    <li>The tank has the fuel the tune is being built for — fresh, from a good station.</li>
+  </ul>
+
+  <h2>Air path</h2>
+  <ul>
+    <li>Air filter is clean; MAF sensor is clean and reading.</li>
+    <li>No vacuum leaks — check hoses, fittings, intake gaskets.</li>
+    <li>Boosted: clamps tight, couplers healthy, no boost leaks (pressure-test if you can).</li>
+  </ul>
+
+  <h2>Engine health</h2>
+  <ul>
+    <li>No active misfires and no unresolved trouble codes — if a light is on, tell us what and why
+    before tune day.</li>
+    <li>Oil level correct, oil in good condition, no significant leaks.</li>
+    <li>If there's any doubt about a cylinder, do the compression / leak-down test <b>before</b>
+    scheduling.</li>
+  </ul>
+
+  <h2>Cooling &amp; charging</h2>
+  <ul>
+    <li>Coolant level correct, fans working — tuning involves repeated load pulls at operating
+    temperature.</li>
+    <li>Battery healthy and charging system working. Flashing a module with weak voltage can brick
+    it; remote customers should keep a maintainer on the battery during writes.</li>
+  </ul>
+
+  <h2>Drivetrain</h2>
+  <ul>
+    <li>Transmission fluid level and condition good — required if transmission calibration is part
+    of the job.</li>
+    <li>Tires in safe condition and properly inflated (they carry the load testing).</li>
+    <li>No driveline vibrations or slipping that "only happens sometimes." Tell us about it.</li>
+  </ul>
+
+  <h2>Tune day (mobile / drop-off)</h2>
+  <ul>
+    <li>At least half a tank of the agreed fuel.</li>
+    <li>Any parts going on the vehicle are ON the vehicle — tune day is not install day.</li>
+    <li>Plan for the session: drop-off runs are typically 4-5 hours.</li>
+  </ul>
+
+  <p class="plain">Found a problem going through this list? That's the checklist working —
+  <a href="mailto:Joey3AM@3amtuning.com">tell us</a> and we'll figure out the order of operations
+  together. Diagnostics is a service we offer too.</p>
+
+  <p><a href="/intake.html">Ready? Start the intake form &rarr;</a></p>
+</main>
+<footer>
+  <div class="legal-links">
+    <a href="/terms.html">Terms of Service</a> &middot;
+    <a href="/privacy.html">Privacy Policy</a> &middot;
+    <a href="/emissions.html">Emissions &amp; Compliance</a>
+  </div>
+  &copy; 2026 3AM Tuning &middot; Portal, GA &middot; All rights reserved.
+</footer>
+</body>
+</html>

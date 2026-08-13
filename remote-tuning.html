@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Remote Tuning — How It Works — 3AM Tuning</title>
+<meta name="description" content="Step-by-step: how remote GM tuning works with 3AM Tuning on your HP Tuners interface — reading your vehicle, licensing, flashing, datalogging, and revisions.">
+<link rel="canonical" href="https://3amtuning.com/remote-tuning.html">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page:#020402; --card:#070b06; --ink:#f4f7ef; --soft:#d8dfd1; --muted:#9da894;
+    --accent:#98ed1d; --accent-bright:#b7ff32;
+    --line:rgba(183,255,50,.18);
+    --display:"Barlow Condensed","Segoe UI",Arial,sans-serif;
+    --body:"Inter","Segoe UI",Arial,sans-serif;
+  }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:var(--body); color:var(--ink); line-height:1.7; font-size:16px; background:var(--page); }
+  a { color:var(--accent-bright); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  nav { position:sticky; top:0; z-index:50; background:rgba(7,10,6,.95); border-bottom:1px solid var(--line); }
+  .nav-in { max-width:1080px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .nav-mark { height:44px; width:auto; }
+  .nav-back { font-size:13.5px; font-weight:600; color:var(--muted); }
+  .nav-back:hover { color:var(--accent-bright); text-decoration:none; }
+  main { max-width:760px; margin:0 auto; padding:48px 24px 72px; }
+  h1 { font-family:var(--display); font-size:40px; letter-spacing:1px; color:var(--accent-bright); margin-bottom:4px; }
+  .updated { color:var(--muted); font-size:13px; margin-bottom:32px; }
+  h2 { font-family:var(--display); font-size:23px; letter-spacing:.6px; margin:34px 0 10px; color:var(--ink); }
+  p, li { color:var(--soft); margin-bottom:12px; }
+  ul, ol { padding-left:22px; margin-bottom:12px; }
+  ol li { margin-bottom:8px; }
+  .callout { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 20px; margin:22px 0; color:var(--soft); }
+  .callout strong, .callout b { color:var(--accent-bright); }
+  .step-num { color:var(--accent-bright); font-family:var(--display); }
+  .cta { display:inline-block; font-size:14px; font-weight:700; padding:12px 24px; border-radius:10px; margin-top:8px;
+    background:var(--accent); color:#10150c; box-shadow:0 8px 24px rgba(143,216,20,.24); }
+  .cta:hover { text-decoration:none; transform:translateY(-2px); }
+  footer { border-top:1px solid var(--line); padding:28px 24px 40px; text-align:center; color:var(--muted); font-size:13px; }
+  .legal-links { margin-bottom:10px; }
+  .legal-links a { color:var(--muted); margin:0 10px; }
+  .legal-links a:hover { color:var(--accent-bright); }
+</style>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="/"><img class="nav-mark" src="/assets/3am_nav_logo_light.png" alt="3AM Tuning"></a>
+  <a class="nav-back" href="/">&larr; Back to site</a>
+</div></nav>
+<main>
+  <h1>REMOTE TUNING — HOW IT WORKS</h1>
+  <div class="updated">HP Tuners &middot; GM vehicles &middot; nationwide</div>
+
+  <div class="callout"><b>The short version:</b> you read the vehicle with your own HP Tuners
+  interface and send us the file. We build your calibration and send it back — most first files
+  within one business day. You flash it, drive it, log it, and we revise until it's right.</div>
+
+  <h2>What you need</h2>
+  <ul>
+    <li>A <b>Windows laptop</b> with HP Tuners <b>VCM Suite</b> installed (free download from
+    hptuners.com — reading your vehicle costs nothing).</li>
+    <li>An <b>HP Tuners MPVI interface</b> (MPVI2, MPVI2+, or MPVI3) registered to <b>your own</b>
+    VCM account.</li>
+    <li><b>Vehicle licensing on your account.</b> Depending on year and module, your vehicle may
+    need HP Tuners credits or unlock service. After we see your intake, we'll tell you exactly
+    what your vehicle needs — you purchase that directly from HP Tuners on your account, so your
+    license stays yours.</li>
+    <li>A <b>healthy battery</b> or a battery maintainer. Flashing a control module with weak
+    voltage is how modules get bricked.</li>
+  </ul>
+
+  <h2>The process</h2>
+  <ol>
+    <li><span class="step-num"><b>Request a quote.</b></span> Fill out the
+    <a href="/intake.html">intake form</a> — year, engine, transmission, mods, fuel, and whether
+    the vehicle has ever been tuned. You'll get back a quote plus exactly what licensing your
+    vehicle needs on your HP Tuners account.</li>
+    <li><span class="step-num"><b>Read your vehicle.</b></span> Using VCM Editor, read the module(s)
+    we ask for and save the stock file. We'll send simple step-by-step instructions with your
+    quote — the read takes a few minutes in your driveway.</li>
+    <li><span class="step-num"><b>Payment.</b></span> Remote work is paid in full up front; tune
+    files are delivered after payment clears.</li>
+    <li><span class="step-num"><b>We build your calibration.</b></span> Custom work on your actual
+    file for your actual combination — not a canned file. Most first files are back within
+    <b>one business day</b> of receiving your stock read.</li>
+    <li><span class="step-num"><b>Flash and drive.</b></span> Write the file with VCM Editor
+    following the instructions we send. Keep the vehicle's voltage stable during the write and
+    don't interrupt it.</li>
+    <li><span class="step-num"><b>Datalog.</b></span> We send a VCM Scanner logging configuration
+    with your file. Log the driving conditions we ask for and email the logs back.</li>
+    <li><span class="step-num"><b>Revisions.</b></span> We read your logs, revise the calibration,
+    and send the next file — repeat until it drives the way it should. Revision support is included
+    within reason; turnaround depends mostly on how quickly logs come back.</li>
+  </ol>
+
+  <h2>Ground rules that keep your engine alive</h2>
+  <ul>
+    <li><b>Run the fuel the tune was built for.</b> A file built for 93 octane or E85 is not safe on
+    anything less. If you want flex-fuel, the vehicle needs a working ethanol content sensor.</li>
+    <li><b>Fix mechanical problems first.</b> Calibration is not a repair. Misfires, fuel delivery
+    problems, and vacuum leaks have to be resolved before the tune — see the
+    <a href="/pre-tune-checklist.html">pre-tune checklist</a>.</li>
+    <li><b>Tell us everything about the combination.</b> Undisclosed mods make bad tunes. Injectors,
+    cam specs, pulley sizes, gear changes — all of it matters.</li>
+  </ul>
+
+  <p>Pricing is on the <a href="/#process">main page</a>. Questions before you start?
+  <a href="mailto:Joey3AM@3amtuning.com">Email us</a> or message the
+  <a href="https://www.facebook.com/profile.php?id=61592151416687">Facebook page</a>.</p>
+
+  <a class="cta" href="/intake.html">Start the intake form</a>
+</main>
+<footer>
+  <div class="legal-links">
+    <a href="/terms.html">Terms of Service</a> &middot;
+    <a href="/privacy.html">Privacy Policy</a> &middot;
+    <a href="/emissions.html">Emissions &amp; Compliance</a>
+  </div>
+  &copy; 2026 3AM Tuning &middot; Portal, GA &middot; All rights reserved.
+</footer>
+</body>
+</html>
