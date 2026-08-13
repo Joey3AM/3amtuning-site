@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Page Not Found — 3AM Tuning</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page:#020402; --ink:#f4f7ef; --muted:#9da894;
+    --accent:#98ed1d; --accent-bright:#b7ff32;
+    --display:"Barlow Condensed","Segoe UI",Arial,sans-serif;
+    --body:"Inter","Segoe UI",Arial,sans-serif;
+  }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:var(--body); color:var(--ink); min-height:100vh; display:flex; align-items:center; justify-content:center;
+    text-align:center; padding:24px;
+    background:
+      radial-gradient(ellipse 600px 400px at 20% 15%, rgba(115,190,20,.10), transparent 60%),
+      radial-gradient(ellipse 500px 300px at 85% 45%, rgba(115,190,20,.08), transparent 55%),
+      #020402; }
+  .card { max-width:520px; }
+  .mark { height:64px; width:auto; margin:0 auto 20px; display:block; }
+  h1 { font-family:var(--display); font-size:64px; line-height:1; color:var(--accent-bright); letter-spacing:2px; }
+  h2 { font-family:var(--display); font-size:26px; margin:10px 0 14px; letter-spacing:1px; }
+  p { color:var(--muted); line-height:1.65; margin-bottom:28px; }
+  .btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  a.btn { font-size:14px; font-weight:700; padding:12px 24px; border-radius:10px; text-decoration:none;
+    background:var(--accent); color:#10150c; box-shadow:0 8px 24px rgba(143,216,20,.24); transition:all .2s; }
+  a.btn:hover { transform:translateY(-2px); box-shadow:0 12px 28px rgba(143,216,20,.32); }
+  a.btn.ghost { background:transparent; color:var(--accent-bright); border:1px solid rgba(183,255,50,.42); box-shadow:none; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <img class="mark" src="/assets/3am_mark.png" alt="3AM Tuning">
+    <h1>404</h1>
+    <h2>WRONG TURN — THIS PAGE DOESN'T EXIST</h2>
+    <p>The page you're looking for moved or never existed. The tune's still here, though.</p>
+    <div class="btns">
+      <a class="btn" href="/">Back to the site</a>
+      <a class="btn ghost" href="/intake.html">Request a quote</a>
+    </div>
+  </div>
+</body>
+</html>
