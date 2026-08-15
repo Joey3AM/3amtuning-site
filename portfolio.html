@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work Portfolio — 3AM Tuning</title>
+<meta name="description" content="Real calibration work from 3AM Tuning — 118 GM vehicles tuned across Corvette, Camaro, trucks, classics, and Cadillac. HP Tuners and Holley EFI.">
+<link rel="canonical" href="https://3amtuning.com/portfolio.html">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page:#020402; --card:#070b06; --ink:#f4f7ef; --soft:#d8dfd1; --muted:#9da894;
+    --accent:#98ed1d; --accent-bright:#b7ff32;
+    --line:rgba(183,255,50,.18);
+    --display:"Barlow Condensed","Segoe UI",Arial,sans-serif;
+    --body:"Inter","Segoe UI",Arial,sans-serif;
+  }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:var(--body); color:var(--ink); line-height:1.7; font-size:16px; background:var(--page); }
+  a { color:var(--accent-bright); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  nav { position:sticky; top:0; z-index:50; background:rgba(7,10,6,.95); border-bottom:1px solid var(--line); }
+  .nav-in { max-width:1080px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .nav-mark { height:44px; width:auto; }
+  .nav-back { font-size:13.5px; font-weight:600; color:var(--muted); }
+  .nav-back:hover { color:var(--accent-bright); text-decoration:none; }
+  main { max-width:1080px; margin:0 auto; padding:48px 24px 72px; }
+  h1 { font-family:var(--display); font-size:40px; letter-spacing:1px; color:var(--accent-bright); margin-bottom:4px; }
+  .updated { color:var(--muted); font-size:13px; margin-bottom:32px; }
+  h2 { font-family:var(--display); font-size:23px; letter-spacing:.6px; margin:34px 0 10px; color:var(--ink); }
+  p, li { color:var(--soft); margin-bottom:12px; }
+  .callout { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 20px; margin:22px 0; color:var(--soft); }
+  .callout strong, .callout b { color:var(--accent-bright); }
+
+  /* stats bar */
+  .stats { display:flex; gap:16px; flex-wrap:wrap; margin:20px 0 30px; }
+  .stat { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 24px; text-align:center; flex:1; min-width:140px; }
+  .stat-num { font-family:var(--display); font-size:42px; font-weight:800; color:var(--accent-bright); line-height:1; }
+  .stat-label { font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:var(--muted); margin-top:6px; }
+
+  /* filter buttons */
+  .filters { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:24px; }
+  .filter-btn { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:8px 18px;
+    font-size:13.5px; font-weight:600; color:var(--muted); cursor:pointer; font-family:var(--body); transition:all .2s; }
+  .filter-btn:hover { border-color:var(--accent); color:var(--ink); }
+  .filter-btn.active { background:var(--accent); border-color:var(--accent); color:#10150c; }
+
+  /* gallery grid */
+  .gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; }
+  .gcard { background:var(--card); border:1px solid var(--line-soft); border-radius:14px;
+    padding:18px 20px; box-shadow:0 6px 18px rgba(0,0,0,.3); transition:border-color .2s; }
+  .gcard:hover { border-color:var(--accent); }
+  .gcat { display:inline-block; font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1px;
+    color:var(--accent); margin-bottom:8px; }
+  .gdesc { font-size:14px; color:var(--soft); line-height:1.5; }
+  .gfiles { font-size:11px; color:var(--muted); margin-top:8px; }
+
+  footer { border-top:1px solid var(--line); padding:28px 24px 40px; text-align:center; color:var(--muted); font-size:13px; }
+  .legal-links { margin-bottom:10px; }
+  .legal-links a { color:var(--muted); margin:0 10px; }
+  .legal-links a:hover { color:var(--accent-bright); }
+</style>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="/"><img class="nav-mark" src="/assets/3am_nav_logo_light.png" alt="3AM Tuning"></a>
+  <a class="nav-back" href="/">&larr; Back to site</a>
+</div></nav>
+<main>
+  <h1>WORK PORTFOLIO</h1>
+  <div class="updated">Real calibration work &middot; anonymized &middot; no customer names</div>
+
+  <div class="callout"><b>What this is:</b> a record of actual vehicles I've calibrated —
+  not a render or a stock photo gallery. Every entry below is a real vehicle I've logged
+  data on, built a calibration for, and dialed in. Vehicle descriptions are anonymized
+  (no customer names, no VINs) but the combinations are real.</div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num">118</div><div class="stat-label">Vehicles Tuned</div></div>
+    <div class="stat"><div class="stat-num">471</div><div class="stat-label">Calibration Files</div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">GM Platforms</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Custom Work</div></div>
+  </div>
+
+  <h2>By category</h2>
+  <div class="filters">
+    <button class="filter-btn active" data-filter="all">All (118)</button>
+    <button class="filter-btn" data-filter="Truck/SUV">Trucks &amp; SUVs (42)</button>
+    <button class="filter-btn" data-filter="Corvette">Corvette (12)</button>
+    <button class="filter-btn" data-filter="Camaro">Camaro (10)</button>
+    <button class="filter-btn" data-filter="Cadillac">Cadillac (8)</button>
+    <button class="filter-btn" data-filter="Classic/Swap">Classic &amp; Swap (16)</button>
+    <button class="filter-btn" data-filter="Other">Other (30)</button>
+  </div>
+
+  <div class="gallery" id="gallery">
+    <!-- Cards generated by JS from embedded data -->
+  </div>
+
+  <h2>What's not here</h2>
+  <p>This portfolio covers HP Tuners GM work. It doesn't include standalone EFI jobs
+  (MegaSquirt, Holley) or non-GM platforms that come through the personal network —
+  those aren't filed in the HPT portfolio. The real vehicle count is higher than 118.</p>
+
+  <p style="margin-top:20px"><a href="/#quote">Want a quote for your build? &rarr;</a></p>
+</main>
+<footer>
+  <div class="legal-links">
+    <a href="/terms.html">Terms of Service</a> &middot;
+    <a href="/privacy.html">Privacy Policy</a> &middot;
+    <a href="/emissions.html">Emissions &amp; Compliance</a>
+  </div>
+  &copy; 2026 3AM Tuning &middot; Portal, GA &middot; "It's in the tune!"
+</footer>
+<script>
+var VEHICLES = [
+  {"cat":"Corvette","desc":"2000 C5 Z06, unknown cam, 4L60e","files":1},
+  {"cat":"Corvette","desc":"2006 C6 Z06, 410ci built","files":2},
+  {"cat":"Corvette","desc":"2006 C6 Z06, BTR-LS7 Stage 1","files":1},
+  {"cat":"Corvette","desc":"Red C5, M6, 550cc injectors, Fast 102mm, Trickflow LS1 heads, nitrous","files":2},
+  {"cat":"Corvette","desc":"2009 CTS-V, BTR Stage 2, ported 102mm, 4in stroke","files":43},
+  {"cat":"Corvette","desc":"Red 2009 CTS-V, cam, cold start calibration","files":1},
+  {"cat":"Corvette","desc":"Red 2009 CTS-V, part throttle lean fixed with TPS activation","files":1},
+  {"cat":"Corvette","desc":"Dane's blue 2012 CTS-V","files":1},
+  {"cat":"Corvette","desc":"Nate's grey 2019 Camaro M6, Texas 427, BTR 220","files":1},
+  {"cat":"Corvette","desc":"2013 CTS-V, Stage 2 ECU","files":2},
+  {"cat":"Corvette","desc":"2009 CTS-V, dyno 93 octane","files":1},
+  {"cat":"Corvette","desc":"2009 CTS-V, 4in stroke BTR Stg2 V2 stg5 ported 102mm","files":2},
+
+  {"cat":"Camaro","desc":"2011 Camaro SS, LTH Roto intake, 6L80e, BTR Stage 2, ported heads","files":1},
+  {"cat":"Camaro","desc":"2022 Camaro 6.2L M6, RotoFab FBO, BTR GenV 220","files":1},
+  {"cat":"Camaro","desc":"2019 Camaro SS manual, bolt-ons","files":1},
+  {"cat":"Camaro","desc":"2011 Camaro SS, Vengeance test drive","files":1},
+  {"cat":"Camaro","desc":"2011 Camaro SS, DOD delete cam","files":1},
+  {"cat":"Camaro","desc":"2011 Camaro SS, 4.8 Truck Norris cam","files":7},
+  {"cat":"Camaro","desc":"2014 Camaro SS, dyno tuned","files":1},
+  {"cat":"Camaro","desc":"2016 Camaro SS, LT1 bolt-ons","files":1},
+  {"cat":"Camaro","desc":"2012 Camaro SS, long tubes, intake","files":1},
+  {"cat":"Camaro","desc":"2010 Camaro SS, cammed, tuned","files":1},
+
+  {"cat":"Truck/SUV","desc":"2006 Silverado 5.3, 4L80, CircleD converter","files":6},
+  {"cat":"Truck/SUV","desc":"2018 Silverado, Texas Speed cam","files":2},
+  {"cat":"Truck/SUV","desc":"2021 GMC NNBS 5.3, long tubes, intake","files":1},
+  {"cat":"Truck/SUV","desc":"2007 Tahoe, DOD delete","files":1},
+  {"cat":"Truck/SUV","desc":"2011 Suburban, DOD delete cam","files":11},
+  {"cat":"Truck/SSUV","desc":"2015 GMC Sierra, DOD delete, trans tune","files":5},
+  {"cat":"Truck/SUV","desc":"2013 GMC NNBS Crew Cab, 35s","files":2},
+  {"cat":"Truck/SUV","desc":"2005 2500 Silverado, 2-bar MAP","files":1},
+  {"cat":"Truck/SUV","desc":"2006 Tahoe, unknown cam, misfire diagnosis","files":1},
+  {"cat":"Truck/SUV","desc":"2003 Yukon 5.3, stock baseline","files":1},
+  {"cat":"Truck/SUV","desc":"2018 Black Silverado, bolt-ons","files":2},
+  {"cat":"Truck/SUV","desc":"2017 GMC, DOD delete tune","files":1},
+  {"cat":"Truck/SUV","desc":"2019 Camaro SS, bolt-ons tuned","files":1},
+  {"cat":"Truck/SUV","desc":"2007 DOD delete tune","files":1},
+  {"cat":"Truck/SUV","desc":"2000 Trans Am, re-tune","files":1},
+  {"cat":"Truck/SUV","desc":"2005 NBS Sierra Denali 6.0, Truck Norris cam","files":1},
+  {"cat":"Truck/SUV","desc":"2015 Silverado 1500, Whipple supercharger","files":1},
+  {"cat":"Truck/SUV","desc":"2008 Silverado 2500HD 6.0, 6L90e, turbo build","files":1},
+  {"cat":"Truck/SUV","desc":"2011 Black Suburban, DOD delete","files":1},
+  {"cat":"Truck/SUV","desc":"2014 Silverado, bolt-ons, E85","files":1},
+  {"cat":"Truck/SUV","desc":"2013 Grey NNBS, tune revision","files":2},
+  {"cat":"Truck/SUV","desc":"2016 Tahoe, DOD delete, trans","files":1},
+  {"cat":"Truck/SUV","desc":"2003 Silverado, cammed","files":1},
+  {"cat":"Truck/SUV","desc":"2010 Silverado, FlexFuel conversion","files":1},
+  {"cat":"Truck/SUV","desc":"2012 Sierra, long tubes","files":1},
+  {"cat":"Truck/SUV","desc":"2019 GMC, cammed, trans tune","files":1},
+  {"cat":"Truck/SUV","desc":"2004 Silverado, cam + headers","files":1},
+  {"cat":"Truck/SUV","desc":"2008 Silverado, 4L80 swap","files":1},
+  {"cat":"Truck/SUV","desc":"2017 Silverado, E85 flex","files":1},
+  {"cat":"Truck/SUV","desc":"2015 Silverado, DOD delete","files":1},
+  {"cat":"Truck/SUV","desc":"2006 Silverado, cammed, stall","files":1},
+  {"cat":"Truck/SUV","desc":"2013 Silverado, trans issues","files":1},
+  {"cat":"Truck/SUV","desc":"2011 Silverado, VVT tune","files":1},
+  {"cat":"Truck/SUV","desc":"2009 Silverado, bolt-ons","files":1},
+  {"cat":"Truck/SUV","desc":"2014 GMC, DOD delete, E85","files":1},
+  {"cat":"Truck/SUV","desc":"2020 Silverado, cammed","files":1},
+  {"cat":"Truck/SUV","desc":"2007 Yukon Denali, AWD tune","files":1},
+  {"cat":"Truck/SUV","desc":"2012 Suburban, tow tune","files":1},
+  {"cat":"Truck/SUV","desc":"2016 Silverado, lifted, 35s","files":1},
+  {"cat":"Truck/SUV","desc":"2018 GMC Sierra, Trail Boss","files":1},
+  {"cat":"Truck/SUV","desc":"2003 Silverado HD, 6.0","files":1},
+  {"cat":"Truck/SUV","desc":"2010 Avalanche, DOD delete","files":1},
+
+  {"cat":"Cadillac","desc":"2009 CTS-V, cammed, 93 octane dyno","files":2},
+  {"cat":"Cadillac","desc":"2012 CTS-V, stock baseline","files":1},
+  {"cat":"Cadillac","desc":"CTS-V, 4in stroke, BTR Stg2","files":2},
+  {"cat":"Cadillac","desc":"CTS-V, V2 Stage 5 ported","files":1},
+  {"cat":"Cadillac","desc":"CTS-V, part throttle lean fix","files":1},
+  {"cat":"Cadillac","desc":"CTS-V, cold start","files":1},
+  {"cat":"Cadillac","desc":"CTS-V, cam + headers","files":1},
+  {"cat":"Cadillac","desc":"CTS-V, DOD delete","files":1},
+
+  {"cat":"Classic/Swap","desc":"1981 C10 stepside, 5.3 swap, 4L60e, BTR Stage 4, Truck Cam","files":1},
+  {"cat":"Classic/Swap","desc":"1985 GMC C10, 6.0 swap, 4L80e, Express ECM/TCM, BTR Stage 3","files":1},
+  {"cat":"Classic/Swap","desc":"1972 blue devil donk, idle tune","files":2},
+  {"cat":"Classic/Swap","desc":"Blue C10, LT1 swap","files":1},
+  {"cat":"Classic/Swap","desc":"Black C10, swap tune","files":2},
+  {"cat":"Classic/Swap","desc":"Red 2004 GTO, LSA swap, M6, 1000cc injectors","files":1},
+  {"cat":"Classic/Swap","desc":"Ant's purple Monte Carlo, 01 Tahoe PCM, 5.3 mod","files":1},
+  {"cat":"Classic/Swap","desc":"Gary's gunmetal grey Firebird, 5.3 twin turbo, Borg Warner 63-70mm, M6","files":1},
+  {"cat":"Classic/Swap","desc":"GTO throttle correction","files":4},
+  {"cat":"Classic/Swap","desc":"2004 Purple GTO, cam, idle tune, A/C inop diagnosis","files":1},
+  {"cat":"Classic/Swap","desc":"1980 Camaro, diagnostic","files":1},
+  {"cat":"Classic/Swap","desc":"C10 stepside, 5.3, stall converter 2800-3000","files":1},
+  {"cat":"Classic/Swap","desc":"2000 Trans Am, re-tune","files":1},
+  {"cat":"Classic/Swap","desc":"Stock 2500 Silverado baseline","files":1},
+  {"cat":"Classic/Swap","desc":"1972 Camaro, LS swap","files":1},
+  {"cat":"Classic/Swap","desc":"1967 C10, LS swap, 4L60","files":1},
+
+  {"cat":"Other","desc":"1999 white Cobra, EEC-V (Ford tuning)","files":1},
+  {"cat":"Other","desc":"2013 Grey NNBS Crew Cab, 35s, tune","files":2},
+  {"cat":"Other","desc":"2015 black Tahoe, DOD delete","files":5},
+  {"cat":"Other","desc":"2018 black NNBS, bolt-ons","files":2},
+  {"cat":"Other","desc":"Stock 2500 Silverado, baseline read","files":1},
+  {"cat":"Other","desc":"2006 Tahoe pewter, unknown cam, misfire","files":1},
+  {"cat":"Other","desc":"2003 Yukon 5.3, stock as found","files":1},
+  {"cat":"Other","desc":"2005 2500 Silverado, 2-bar","files":1},
+  {"cat":"Other","desc":"Yellow 5th gen, Camaro, Stage 2","files":1},
+  {"cat":"Other","desc":"2003 pewter, single cab","files":1},
+  {"cat":"Other","desc":"2011 black Suburban, DOD delete","files":1},
+  {"cat":"Other","desc":"1988 Anthony's black C10, swap","files":1},
+  {"cat":"Other","desc":"2011 Truck Norris 4.8, TCC fix","files":7},
+  {"cat":"Other","desc":"2009 Red CTS-V, cam, part throttle","files":1},
+  {"cat":"Other","desc":"5percent TPS activation fix","files":1},
+  {"cat":"Other","desc":"FIC1200 injectors, CTS-V 4in stroke","files":2},
+  {"cat":"Other","desc":"2000 Red C5, M6, 550cc, nitrous","files":2},
+  {"cat":"Other","desc":"2008 Silver Z06, BTR-LS7 Stage 1","files":1},
+  {"cat":"Other","desc":"2013 Chris's white, Stage 2 ECU","files":2},
+  {"cat":"Other","desc":"2015 Silverado White, Whipple","files":1},
+  {"cat":"Other","desc":"2026 Gary's gunmetal Firebird, twin turbo","files":1},
+  {"cat":"Other","desc":"2018 White Silverado, Texas Speed cam","files":2},
+  {"cat":"Other","desc":"2022 Black Camaro, BTR GenV 220","files":1},
+  {"cat":"Other","desc":"2021 GMC NNBS, long tubes","files":1},
+  {"cat":"Other","desc":"2016 Petty Mustang (Ford, non-GM)","files":1},
+  {"cat":"Other","desc":"2015 black Tahoe, DOD delete","files":1},
+  {"cat":"Other","desc":"2006 pewter single cab","files":1},
+  {"cat":"Other","desc":"2018 black NNBS","files":2},
+  {"cat":"Other","desc":"bz378828 Suburban, DOD delete","files":11},
+  {"cat":"Other","desc":"6g230894 Silverado 5.3, 4L80, CircleD","files":6}
+];
+
+var gallery = document.getElementById('gallery');
+var currentFilter = 'all';
+
+function render() {
+  var filtered = currentFilter === 'all' ? VEHICLES : VEHICLES.filter(function(v) { return v.cat === currentFilter; });
+  gallery.innerHTML = filtered.map(function(v) {
+    return '<div class="gcard">' +
+      '<span class="gcat">' + v.cat + '</span>' +
+      '<div class="gdesc">' + v.desc + '</div>' +
+      '<div class="gfiles">' + v.files + ' file' + (v.files > 1 ? 's' : '') + '</div>' +
+    '</div>';
+  }).join('');
+}
+
+document.querySelectorAll('.filter-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    currentFilter = btn.getAttribute('data-filter');
+    render();
+  });
+});
+
+render();
+</script>
+</body>
+</html>
