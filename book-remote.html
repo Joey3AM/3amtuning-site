@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a Remote Calibration — 3AM Tuning</title>
+<meta name="description" content="Book and pay for a remote GM calibration with 3AM Tuning. Pick your combination — base cal, 8/10-speed transmission, E85 flex fuel, power adder — and check out. Nationwide on your HP Tuners interface.">
+<link rel="canonical" href="https://3amtuning.com/book-remote.html">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page:#020402; --card:#070b06; --ink:#f4f7ef; --soft:#d8dfd1; --muted:#9da894;
+    --accent:#98ed1d; --accent-bright:#b7ff32;
+    --line:rgba(183,255,50,.18);
+    --display:"Barlow Condensed","Segoe UI",Arial,sans-serif;
+    --body:"Inter","Segoe UI",Arial,sans-serif;
+  }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:var(--body); color:var(--ink); line-height:1.7; font-size:16px; background:var(--page); }
+  a { color:var(--accent-bright); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  nav { position:sticky; top:0; z-index:50; background:rgba(7,10,6,.95); border-bottom:1px solid var(--line); }
+  .nav-in { max-width:1080px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .nav-mark { height:44px; width:auto; }
+  .nav-back { font-size:13.5px; font-weight:600; color:var(--muted); }
+  .nav-back:hover { color:var(--accent-bright); text-decoration:none; }
+  main { max-width:760px; margin:0 auto; padding:48px 24px 72px; }
+  h1 { font-family:var(--display); font-size:40px; letter-spacing:1px; color:var(--accent-bright); margin-bottom:4px; }
+  .updated { color:var(--muted); font-size:13px; margin-bottom:32px; }
+  h2 { font-family:var(--display); font-size:23px; letter-spacing:.6px; margin:34px 0 10px; color:var(--ink); }
+  p, li { color:var(--soft); margin-bottom:12px; }
+  ul, ol { padding-left:22px; margin-bottom:12px; }
+  ol li { margin-bottom:8px; }
+  .callout { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 20px; margin:22px 0; color:var(--soft); }
+  .callout strong, .callout b { color:var(--accent-bright); }
+  .step-num { color:var(--accent-bright); font-family:var(--display); }
+
+  .builder { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 26px 22px; margin:26px 0; }
+  .opt { display:flex; align-items:flex-start; gap:14px; padding:14px 12px; border-radius:10px; border:1px solid transparent; cursor:pointer; }
+  .opt:hover { border-color:var(--line); }
+  .opt input { margin-top:6px; width:18px; height:18px; accent-color:var(--accent); flex:none; cursor:pointer; }
+  .opt.locked { cursor:default; }
+  .opt .o-name { font-weight:700; color:var(--ink); }
+  .opt .o-desc { font-size:13.5px; color:var(--muted); margin:2px 0 0; line-height:1.5; }
+  .opt .o-price { margin-left:auto; font-family:var(--display); font-weight:800; font-size:22px; color:var(--accent-bright); white-space:nowrap; padding-left:14px; }
+  .total-row { display:flex; align-items:center; justify-content:space-between; border-top:1px solid var(--line); margin-top:14px; padding:18px 12px 6px; }
+  .total-label { font-family:var(--display); font-size:20px; letter-spacing:.6px; color:var(--ink); }
+  .total-val { font-family:var(--display); font-weight:800; font-size:40px; line-height:1; color:var(--accent-bright); }
+  .pay-row { padding:14px 12px 2px; }
+  .cta { display:inline-block; font-size:15px; font-weight:700; padding:14px 30px; border-radius:10px; border:0; cursor:pointer;
+    font-family:var(--body); background:var(--accent); color:#10150c; box-shadow:0 8px 24px rgba(143,216,20,.24); }
+  .cta:hover { text-decoration:none; transform:translateY(-2px); }
+  .cta[disabled] { background:#2a3324; color:var(--muted); box-shadow:none; cursor:not-allowed; transform:none; }
+  .pay-fallback { display:none; font-size:13.5px; color:var(--muted); margin-top:10px; }
+  .fine { font-size:13px; color:var(--muted); margin-top:14px; line-height:1.6; }
+  footer { border-top:1px solid var(--line); padding:28px 24px 40px; text-align:center; color:var(--muted); font-size:13px; }
+  .legal-links { margin-bottom:10px; }
+  .legal-links a { color:var(--muted); margin:0 10px; }
+  .legal-links a:hover { color:var(--accent-bright); }
+</style>
+</head>
+<body>
+<nav><div class="nav-in">
+  <a href="/"><img class="nav-mark" src="/assets/3am_nav_logo_light.png" alt="3AM Tuning"></a>
+  <a class="nav-back" href="/">&larr; Back to site</a>
+</div></nav>
+<main>
+  <h1>BOOK A REMOTE CALIBRATION</h1>
+  <div class="updated">HP Tuners &middot; GM vehicles &middot; nationwide</div>
+
+  <div class="callout"><b>How this works:</b> pick your combination below, check out, and you're
+  in the queue — jobs are worked in the order they come in. You'll get a paid receipt by email
+  right away, and we'll follow up the same business day with your intake and read instructions.
+  Remote work is paid in full up front; tune files are delivered after payment clears.
+  New to remote tuning? Read <a href="/remote-tuning.html">how it works</a> first.</div>
+
+  <div class="builder">
+    <label class="opt locked">
+      <input type="checkbox" checked disabled>
+      <span><span class="o-name">Base remote calibration</span>
+      <span class="o-desc" style="display:block">Custom ECU calibration on your actual file for your actual combination — revision support included. On your HP Tuners interface and account.</span></span>
+      <span class="o-price">$450</span>
+    </label>
+    <label class="opt">
+      <input type="checkbox" id="opt-trans" data-adder="trans">
+      <span><span class="o-name">8/10-speed transmission tuning</span>
+      <span class="o-desc" style="display:block">Real shift tuning for 8L90 / 10L80 / 10L90 boxes. 6-speed (6L80/6L90) trans tuning is already included in the base cal at no charge — only select this for an 8- or 10-speed.</span></span>
+      <span class="o-price">+$150</span>
+    </label>
+    <label class="opt">
+      <input type="checkbox" id="opt-e85" data-adder="e85">
+      <span><span class="o-name">Flex fuel / E85</span>
+      <span class="o-desc" style="display:block">Ethanol blending calibration. Requires a working ethanol content sensor on the vehicle.</span></span>
+      <span class="o-price">+$50</span>
+    </label>
+    <label class="opt">
+      <input type="checkbox" id="opt-power" data-adder="power">
+      <span><span class="o-name">Power adder</span>
+      <span class="o-desc" style="display:block">Supercharger, turbo, or nitrous combinations — added calibration labor.</span></span>
+      <span class="o-price">+$100</span>
+    </label>
+
+    <div class="total-row">
+      <span class="total-label">YOUR TOTAL</span>
+      <span class="total-val" id="total">$450</span>
+    </div>
+    <div class="pay-row">
+      <button class="cta" id="pay-btn" type="button">Check out &amp; get in the queue</button>
+      <div class="pay-fallback" id="pay-fallback">Online checkout for this combination isn't live
+      yet — <a href="/intake.html">start the intake form</a> or message the
+      <a href="https://www.facebook.com/profile.php?id=61592151416687">Facebook page</a> and
+      we'll get you booked directly.</div>
+    </div>
+    <p class="fine">Checkout will ask for your year/make/model, engine and transmission, and
+    whether the vehicle has ever been tuned. HP Tuners licensing (credits / unlock service where
+    applicable) is purchased by you directly from HP Tuners on your own VCM account and is not
+    included in these prices — after your intake we'll tell you exactly what your vehicle needs.
+    Payment terms and refunds are covered in the <a href="/terms.html">Terms of Service</a>.</p>
+  </div>
+
+  <h2>What happens after checkout</h2>
+  <ol>
+    <li><span class="step-num"><b>You get a receipt, we get notified.</b></span> Your order enters
+    the work queue immediately, in the order it was paid.</li>
+    <li><span class="step-num"><b>Intake and read instructions.</b></span> Same business day we
+    send your intake form and simple step-by-step instructions to read your vehicle with VCM
+    Editor and send us the stock file.</li>
+    <li><span class="step-num"><b>Your calibration comes back.</b></span> Most first files are
+    back within one business day of receiving your stock read. Then flash, drive, log, and we
+    revise until it drives the way it should.</li>
+  </ol>
+
+  <h2>Not sure what you need?</h2>
+  <p>If your combination doesn't fit the options above — cammed builds, newer GM platforms,
+  standalone EFI, or you just want a straight answer first — <a href="/intake.html">fill out the
+  intake form</a> or <a href="mailto:Joey3AM@3amtuning.com">email us</a> and you'll get a firm
+  quote, usually same day.</p>
+</main>
+<footer>
+  <div class="legal-links">
+    <a href="/terms.html">Terms of Service</a> &middot;
+    <a href="/privacy.html">Privacy Policy</a> &middot;
+    <a href="/emissions.html">Emissions Policy</a>
+  </div>
+  &copy; 2026 3AM Tuning &middot; Portal, GA &middot; "It's in the tune!"
+</footer>
+<script>
+(function () {
+  // Stripe Payment Link URLs — one per combination. Keys are the selected adders
+  // sorted alphabetically and joined with "+", or "base" for no adders.
+  // Fill these in from the Stripe dashboard (see business/invoicing/REMOTE_CHECKOUT_SETUP.md).
+  var PAYLINKS = {
+    "base": "",            // $450  Base remote calibration
+    "e85": "",             // $500  Base + flex fuel
+    "power": "",           // $550  Base + power adder
+    "trans": "",           // $600  Base + 8/10-spd trans
+    "e85+power": "",       // $600  Base + flex fuel + power adder
+    "e85+trans": "",       // $650  Base + flex fuel + 8/10-spd trans
+    "power+trans": "",     // $700  Base + power adder + 8/10-spd trans
+    "e85+power+trans": ""  // $750  Base + flex fuel + power adder + 8/10-spd trans
+  };
+  var PRICES = { base: 450, trans: 150, e85: 50, power: 100 };
+
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('input[data-adder]'));
+  var totalEl = document.getElementById('total');
+  var payBtn = document.getElementById('pay-btn');
+  var fallback = document.getElementById('pay-fallback');
+
+  function comboKey() {
+    var sel = boxes.filter(function (b) { return b.checked; })
+                   .map(function (b) { return b.getAttribute('data-adder'); })
+                   .sort();
+    return sel.length ? sel.join('+') : 'base';
+  }
+  function update() {
+    var total = PRICES.base;
+    boxes.forEach(function (b) { if (b.checked) total += PRICES[b.getAttribute('data-adder')]; });
+    totalEl.textContent = '$' + total;
+    var link = PAYLINKS[comboKey()];
+    if (link) {
+      payBtn.removeAttribute('disabled');
+      fallback.style.display = 'none';
+    } else {
+      payBtn.setAttribute('disabled', 'disabled');
+      fallback.style.display = 'block';
+    }
+  }
+  payBtn.addEventListener('click', function () {
+    var link = PAYLINKS[comboKey()];
+    if (link) { window.location.href = link; }
+  });
+  boxes.forEach(function (b) { b.addEventListener('change', update); });
+  update();
+})();
+</script>
+</body>
+</html>
