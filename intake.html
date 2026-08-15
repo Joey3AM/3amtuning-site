@@ -138,6 +138,27 @@
       </div>
     </div>
 
+    <h2>Tuning History</h2>
+    <p style="font-weight:600;margin:14px 0 8px">Has this vehicle ever been tuned — and if so, with what?</p>
+    <div class="radio-group">
+      <div class="radio-item">
+        <input type="radio" name="tune_history" id="tune_none" value="Never tuned" required>
+        <label for="tune_none">Never tuned (factory software)</label>
+      </div>
+      <div class="radio-item">
+        <input type="radio" name="tune_history" id="tune_hpt" value="HP Tuners custom tune">
+        <label for="tune_hpt">Yes — HP Tuners custom tune</label>
+      </div>
+      <div class="radio-item">
+        <input type="radio" name="tune_history" id="tune_handheld" value="Handheld / mail-order programmer">
+        <label for="tune_handheld">Yes — handheld or mail-order programmer (Range, Hypertech, Pulsar, Diablo, etc.)</label>
+      </div>
+      <div class="radio-item">
+        <input type="radio" name="tune_history" id="tune_unsure" value="Not sure / bought it that way">
+        <label for="tune_unsure">Not sure / bought it that way</label>
+      </div>
+    </div>
+
     <h2>Module / Unlock Status</h2>
     <div class="callout">
       <b>Does your computer need unlocking?</b> Some GM modules (especially 2019+ / Gen V) need a
@@ -224,7 +245,7 @@
     <p class="note" style="text-align:center">Sending opens your email app with everything filled in, and copies a summary you can paste into Facebook Messenger instead. <b>This form is a quote request only</b> &mdash; it does not create a service agreement. The service agreement and liability waiver are provided and signed separately before any work begins.</p>
     <script>
     function sendIntake(){
-      var fields=[["Name","name"],["Phone","phone"],["Email","email"],["City","location"],["Preferred contact","contact_pref"],["Year","year"],["Make/Model","model"],["Engine","engine"],["Transmission","trans"],["Mods","mods"],["Power adder","power_adder"],["Fuel","fuel"],["Complaint/goal","complaint"],["Codes","dtcs"],["Date choice 1","date1"],["Date choice 2","date2"],["Notes","notes"]];
+      var fields=[["Name","name"],["Phone","phone"],["Email","email"],["City","location"],["Preferred contact","contact_pref"],["Year","year"],["Make/Model","model"],["Engine","engine"],["Transmission","trans"],["Tuning history","tune_history"],["Mods","mods"],["Power adder","power_adder"],["Fuel","fuel"],["Unlock status","unlock_status"],["Complaint/goal","complaint"],["Codes","dtcs"],["Date choice 1","date1"],["Date choice 2","date2"],["Notes","notes"]];
       var req=["name","phone","year","model","engine","mods","complaint"];
       var lines=[],missing=[];
       fields.forEach(function(f){
