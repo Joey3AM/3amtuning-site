@@ -242,6 +242,11 @@
     </div>
 
     <button class="submit" type="button" onclick="sendIntake()">SEND MY INFO</button>
+    <div id="confirm-msg" style="display:none;margin-top:16px;padding:16px 20px;background:#f0f8e8;border:1px solid #5a8f1e;border-radius:8px;font-size:14px;color:#111;line-height:1.6">
+      <b>Your info is ready.</b> Your email app should have opened with everything filled in.
+      If it didn't open, your details are copied to your clipboard &mdash;
+      <a href="https://www.facebook.com/profile.php?id=61592151416687" style="color:#5a8f1e;font-weight:700">paste it to us on Facebook Messenger &rarr;</a>
+    </div>
     <p class="note" style="text-align:center">Sending opens your email app with everything filled in, and copies a summary you can paste into Facebook Messenger instead. <b>This form is a quote request only</b> &mdash; it does not create a service agreement. The service agreement and liability waiver are provided and signed separately before any work begins.</p>
     <script>
     function sendIntake(){
@@ -256,12 +261,16 @@
       });
       var th=document.querySelector('input[name="unlock_status"]:checked');
       var st=document.querySelector('input[name="service_type"]:checked');
+      var th2=document.querySelector('input[name="tune_history"]:checked');
+      if(!th2)missing.push("Tuning history");else lines.push("Tuning history: "+th2.nextElementSibling.textContent);
       if(!th)missing.push("Module unlocked (HP Tuners unlock service)");else lines.push("Module unlocked by HP Tuners unlock service: "+th.nextElementSibling.textContent);
       if(!st)missing.push("Service type");else lines.push("Service type: "+st.nextElementSibling.textContent);
       if(missing.length){alert("Please fill in: "+missing.join(", "));return;}
       var body=lines.join("\n");
       if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(body).catch(function(){});
       location.href="mailto:Joey3AM@3amtuning.com?subject="+encodeURIComponent("Tune intake - "+document.getElementsByName("year")[0].value+" "+document.getElementsByName("model")[0].value)+"&body="+encodeURIComponent(body);
+      var cm=document.getElementById("confirm-msg");
+      if(cm)cm.style.display="block";
     }
     </script>
 
