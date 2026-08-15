@@ -258,6 +258,23 @@
   .faq details[open] summary::after { content:"–"; }
   .faq details p { padding:0 26px 22px; color:var(--muted); font-size:15px; }
 
+  /* ---------- testimonials ---------- */
+  .testimonials { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:16px; margin-top:8px; }
+  .tm-card { background:var(--card); border:1px solid var(--line-soft); border-radius:16px; padding:24px 26px;
+    box-shadow:0 8px 22px rgba(0,0,0,.35); position:relative; overflow:hidden; }
+  .tm-card::before { content:"\201C"; position:absolute; top:-12px; right:14px; font-family:var(--display);
+    font-size:64px; color:rgba(152,237,29,.10); line-height:1; }
+  .tm-stars { color:var(--accent-deep); font-size:16px; letter-spacing:2px; margin-bottom:10px; }
+  .tm-text { font-size:15px; color:var(--soft); line-height:1.65; margin-bottom:16px; }
+  .tm-attr { display:flex; align-items:center; gap:12px; }
+  .tm-attr .tm-vehicle { font-size:13px; color:var(--accent-bright); font-weight:600; }
+  .tm-attr .tm-name { font-size:13px; color:var(--muted); }
+  .tm-empty { text-align:center; padding:40px 20px; color:var(--muted); font-size:14px; border:1px dashed var(--line-soft);
+    border-radius:16px; }
+  .tm-cta { text-align:center; margin-top:18px; }
+  .tm-cta a { font-size:13.5px; color:var(--muted); }
+  .tm-cta a:hover { color:var(--accent-bright); }
+
   /* ---------- partner bar ---------- */
   .partner-bar { border-top:1px solid var(--line-soft); padding:24px 0;
     background:linear-gradient(145deg, rgba(12,18,10,.96), rgba(5,8,4,.98)); }
@@ -475,6 +492,39 @@
         <summary>How long does it take?</summary>
         <p>Most first revisions are back within one business day of receiving your stock file. In-person drop-off sessions are typically 4-5 hours. Remote work depends on how quickly logs are returned.</p>
       </details>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <div class="kicker">What customers say</div>
+    <h2>Reviews</h2>
+    <div class="testimonials">
+      <div class="tm-card">
+        <div class="tm-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tm-text">Had Joey tune my 2016 Camaro SS after a cam and headers install. Drove it 2 hours to drop it off and he had it dialed in same day. Surging gone, pulls clean, shifts perfect. Worth every penny.</p>
+        <div class="tm-attr">
+          <span class="tm-vehicle">2016 Camaro SS &middot; cam + headers</span>
+        </div>
+      </div>
+      <div class="tm-card">
+        <div class="tm-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tm-text">Second tune from 3AM. First was my 5.3 truck, now my wife's Tahoe. Joey explains everything, shows you the logs, and doesn't guess. The revision support is real &mdash; he actually follows up.</p>
+        <div class="tm-attr">
+          <span class="tm-vehicle">2015 Silverado 5.3 &middot; 2016 Tahoe</span>
+        </div>
+      </div>
+      <div class="tm-card">
+        <div class="tm-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="tm-text">Did a remote tune on my 2014 C7. I was nervous about not being there in person but the process was smooth &mdash; read the car, sent the file, had the tune back next day. Log, revise, done. No mail-order nonsense.</p>
+        <div class="tm-attr">
+          <span class="tm-vehicle">2014 Corvette C7 &middot; remote tune</span>
+        </div>
+      </div>
+    </div>
+    <div class="tm-cta">
+      <p style="font-size:13.5px;color:var(--muted);margin-top:16px">These are placeholder reviews for layout. Real customer testimonials replace them as reviews come in &mdash; <a href="https://www.facebook.com/profile.php?id=61592151416687">leave us a review on Facebook</a>.</p>
     </div>
   </div>
 </section>
